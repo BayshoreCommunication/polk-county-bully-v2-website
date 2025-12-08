@@ -41,7 +41,7 @@ const Footer: React.FC = () => {
       </div>
 
       {/* Background Gradient Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-br from-indigo-900/90 to-purple-800/90 -z-10" />
+      <div className="absolute inset-0 bg-linear-to-br from-indigo-900/90 to-purple-800/90 -z-10" />
 
       <div className="container mx-auto px-6 md:px-12 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-x-24 xl:gap-x-32 mb-16">

@@ -4,7 +4,7 @@ import React from "react";
 
 // Define the interface for the button props
 interface ButtonProps {
-  label: string; // The text inside the button
+  label: React.ReactNode; // The text or element inside the button
   href: string; // The link destination
   className?: string; // Optional custom classes (e.g., for width)
 }
