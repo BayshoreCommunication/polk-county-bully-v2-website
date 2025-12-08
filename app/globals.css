@@ -10,6 +10,10 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  --font-georgia: var(--font-georgia);
+  --font-poppins: var(--font-poppins);
+  --font-lato: var(--font-lato);
+  --font-inter: var(--font-inter);
 }
 
 @media (prefers-color-scheme: dark) {
