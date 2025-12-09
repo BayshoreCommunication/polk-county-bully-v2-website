@@ -1,6 +1,12 @@
 "use client"; // Required for framer-motion
 
-import { animate, motion, useMotionValue, useTransform, Variants } from "framer-motion"; // Animation library
+import {
+  animate,
+  motion,
+  useMotionValue,
+  useTransform,
+  Variants,
+} from "framer-motion"; // Animation library
 import { Bone, PawPrint } from "lucide-react";
 import Image from "next/image";
 import { useEffect } from "react";
@@ -79,12 +85,15 @@ const HeroSection = () => {
           alt="Hero Background Art"
           fill
           priority
-          className="object-cover object-center fixed inset-0"
+          className="object-cover object-center fixed inset-0 blur-[1px] brightness-[0.6]"
           quality={100}
           sizes="100vw"
         />
-        {/* Enhanced gradient overlay */}
-        <div className="absolute inset-0 bg-linear-to-b from-black/50 via-black/30 to-black/60" />
+        {/* Multi-colored gradient blur overlay */}
+        <div className="absolute inset-0 bg-linear-to-bl from-cyan-900/50 via-teal-800/50 to-amber-800/50 backdrop-blur-md opacity-60" />
+        {/* Additional radial gradient for depth */}
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,var(--tw-gradient-stops))] from-cyan-800/25 via-transparent to-transparent" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,var(--tw-gradient-stops))] from-amber-500/25 via-transparent to-transparent" />
       </div>
 
       <div className="container mx-auto px-4 sm:px-6 md:px-8 lg:px-12 py-16 md:py-24 relative z-10">
@@ -223,6 +232,9 @@ const HeroSection = () => {
           />
         </motion.div>
       </div>
+
+      {/* Bottom gradient blur transition */}
+      <div className="absolute bottom-0 left-0 right-0 h-40 md:h-48 bg-linear-to-b from-transparent via-black/20 to-black/60 backdrop-blur-md z-5" />
     </section>
   );
 };

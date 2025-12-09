@@ -18,17 +18,23 @@ const SpreadTheWord = () => {
 
   return (
     <section className="relative py-24 overflow-hidden">
+      {/* Top gradient blur transition */}
+      <div className="absolute top-0 left-0 right-0 h-40 md:h-48 bg-linear-to-b from-black/80 via-black/0 to-transparent backdrop-blur-md z-5" />
+
       {/* --- Background Image & Overlay --- */}
       <div className="absolute inset-0 -z-20">
         <Image
           src="/assets/home/spreadtheword-bg.svg" // Replace with your actual image path
           alt="Colorful blurry background texture"
           fill
-          className="object-cover object-center"
+          className="object-cover object-center brightness-[0.6]"
           quality={90}
         />
-        {/* Dark overlay to ensure text is readable on top of the busy background */}
-        <div className="absolute inset-0 bg-black/20" />
+        {/* Multi-colored gradient blur overlay */}
+        <div className="absolute inset-0 bg-linear-to-bl from-cyan-900/20 via-teal-800/20 to-amber-800/20 backdrop-blur-md opacity-10" />
+        {/* Additional radial gradient for depth */}
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,var(--tw-gradient-stops))] from-cyan-800/25 via-transparent to-transparent" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,var(--tw-gradient-stops))] from-amber-500/25 via-transparent to-transparent" />
       </div>
 
       <div className="container mx-auto px-4 relative z-10">
@@ -66,7 +72,7 @@ const SpreadTheWord = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={social.label}
-                  className="block bg-white text-black p-3 rounded-full hover:bg-gray-200 hover:scale-110 transition-all duration-300 shadow-lg"
+                  className="block bg-white/10 text-white p-3 rounded-full border border-white/20 hover:bg-white/20 hover:scale-110 transition-all duration-300 shadow-lg backdrop-blur-sm"
                 >
                   <social.icon className="w-6 h-6" />
                 </Link>
@@ -91,6 +97,8 @@ const SpreadTheWord = () => {
           </ScrollMotion>
         </ScrollMotion>
       </div>
+      {/* Bottom gradient blur transition */}
+      <div className="absolute bottom-0 left-0 right-0 h-40 md:h-48 bg-linear-to-b from-transparent via-black/10 to-black/10 backdrop-blur-md z-5" />
     </section>
   );
 };

@@ -9,17 +9,23 @@ const Volunteer = () => {
 
   return (
     <section className="relative py-24 overflow-hidden">
+      {/* Top gradient blur transition */}
+      <div className="absolute top-0 left-0 right-0 h-40 md:h-48 bg-linear-to-b from-black via-black/60 to-transparent backdrop-blur-md z-5" />
+
       {/* --- Background Image --- */}
       <div className="absolute inset-0 -z-20">
         <Image
-          src="/assets/home/foster-bg.svg" // Replace with your graffiti background
+          src="/assets/home/volunteer-bg.svg" // Replace with your graffiti background
           alt="Colorful graffiti art background"
           fill
-          className="object-cover object-center"
+          className="object-cover object-center blur-[1px] brightness-[0.6]"
           quality={90}
         />
-        {/* Dark overlay for contrast */}
-        <div className="absolute inset-0 bg-black/20 backdrop-blur-[2px]" />
+        {/* Multi-colored gradient blur overlay */}
+        <div className="absolute inset-0 bg-linear-to-bl from-cyan-900/50 via-teal-800/50 to-amber-800/50 backdrop-blur-md opacity-60" />
+        {/* Additional radial gradient for depth */}
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,var(--tw-gradient-stops))] from-cyan-800/25 via-transparent to-transparent" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,var(--tw-gradient-stops))] from-amber-500/25 via-transparent to-transparent" />
       </div>
 
       <div className="container mx-auto px-4 md:px-8 relative z-10">
@@ -96,6 +102,8 @@ const Volunteer = () => {
           </div>
         </ScrollMotion>
       </div>
+      {/* Bottom gradient blur transition */}
+      <div className="absolute bottom-0 left-0 right-0 h-40 md:h-48 bg-linear-to-b from-transparent via-black/60 to-black backdrop-blur-md z-5" />
     </section>
   );
 };

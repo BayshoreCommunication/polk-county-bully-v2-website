@@ -47,8 +47,11 @@ const Merchandise = () => {
   const goldColor = "#FFD700";
 
   return (
-    <section className="py-20 bg-white">
-      <div className="container mx-auto px-4 md:px-8">
+    <section className="relative py-20 bg-white overflow-hidden">
+      {/* Top gradient blur transition */}
+      <div className="absolute top-0 left-0 right-0 h-40 md:h-48  backdrop-blur-md z-5" />
+
+      <div className="container mx-auto px-4 md:px-8 relative z-20">
         {/* --- Heading --- */}
         <ScrollMotion>
           <div className="text-center mb-16">
@@ -108,6 +111,9 @@ const Merchandise = () => {
           </div>
         </ScrollMotion>
       </div>
+
+      {/* Bottom gradient blur transition */}
+      <div className="absolute bottom-0 left-0 right-0 h-40 md:h-48  backdrop-blur-md z-5" />
     </section>
   );
 };

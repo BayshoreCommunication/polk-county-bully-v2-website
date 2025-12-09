@@ -26,10 +26,13 @@ const SponsorADog = () => {
 
   return (
     <section
-      className="py-20 overflow-hidden"
+      className="relative py-20 overflow-hidden"
       style={{ backgroundColor: sectionBgColor }}
     >
-      <div className="container mx-auto px-4 md:px-8">
+      {/* Top gradient blur transition */}
+      <div className="absolute top-0 left-0 right-0 h-40 md:h-48 bg-linear-to-b from-[#003C5F]/70 via-[#003C5F]/35 to-transparent backdrop-blur-md z-5" />
+
+      <div className="container mx-auto px-4 md:px-8 relative z-20">
         {/* Wrapper to control max-width */}
         <div className="max-w-6xl mx-auto flex flex-col gap-10 md:gap-16">
           {/* --- TOP ROW (3 DOGS) --- */}

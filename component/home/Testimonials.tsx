@@ -59,19 +59,26 @@ const Testimonials = () => {
 
   return (
     <section className="relative py-24 overflow-hidden">
+      {/* Top gradient blur transition */}
+      <div className="absolute top-0 left-0 right-0 h-40 md:h-48 bg-linear-to-b from-[#1F7A8C]/80 via-[#1F7A8C]/40 to-transparent z-5" />
+
       {/* --- Background Image --- */}
       <div className="absolute inset-0 -z-20">
         <Image
           src="/assets/home/testimonial-bg.svg"
           alt="Colorful graffiti art background"
           fill
-          className="object-cover object-center"
+          className="object-cover object-center blur-[1px] brightness-[0.6]"
           quality={90}
         />
-        <div className="absolute inset-0 bg-black/50 backdrop-blur-[2px]" />
+        {/* Multi-colored gradient blur overlay */}
+        <div className="absolute inset-0 bg-linear-to-bl from-cyan-900/50 via-teal-800/50 to-amber-800/50 backdrop-blur-md opacity-60" />
+        {/* Additional radial gradient for depth */}
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,var(--tw-gradient-stops))] from-cyan-800/25 via-transparent to-transparent" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,var(--tw-gradient-stops))] from-amber-500/25 via-transparent to-transparent" />
       </div>
 
-      <div className="container mx-auto px-4 md:px-8 relative z-10">
+      <div className="container mx-auto px-4 md:px-8 relative z-20">
         {/* --- Header Section --- */}
         <ScrollMotion className="text-center mb-16">
           <h2
@@ -92,19 +99,17 @@ const Testimonials = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
           {testimonials.map((item, index) => (
             <ScrollMotion key={item.id} delay={index * 0.2} className="h-full">
-              <div className="bg-white/50 backdrop-blur-sm rounded-[2.5rem] p-8 md:p-10 text-center shadow-2xl h-full flex flex-col items-center relative overflow-hidden group hover:-translate-y-2 transition-transform duration-300">
+              <div className="bg-black/30 backdrop-blur-md rounded-[2.5rem] p-8 md:p-10 text-center shadow-2xl h-full flex flex-col items-center relative overflow-hidden group hover:-translate-y-2 transition-transform duration-300 border border-white/10">
                 {/* Watermark Pattern (Optional) */}
                 <div className="absolute inset-0 opacity-5 bg-[url('/assets/pattern.png')] bg-repeat z-0 pointer-events-none" />
-                
                 {/* Avatar */}{" "}
                 <TestimonialAvatar src={item.image} name={item.name} />
-
                 {/* Name */}
-                <h3 className="text-2xl font-extrabold text-black mb-4 z-10">
+                <h3 className="text-2xl font-extrabold text-white mb-4 z-10">
                   {item.name}
                 </h3>
                 {/* Testimonial Text */}
-                <p className="text-gray-800 leading-relaxed font-medium z-10">
+                <p className="text-gray-200 leading-relaxed font-medium z-10">
                   {item.text}
                 </p>
               </div>
@@ -112,6 +117,9 @@ const Testimonials = () => {
           ))}
         </div>
       </div>
+
+      {/* Bottom gradient blur transition */}
+      <div className="absolute bottom-0 left-0 right-0 h-40 md:h-48 bg-linear-to-b from-transparent via-black/25 to-black z-5" />
     </section>
   );
 };

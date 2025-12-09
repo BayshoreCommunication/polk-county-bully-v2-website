@@ -1,7 +1,6 @@
 import { Check } from "lucide-react";
 import Image from "next/image";
 import ScrollMotion from "../motion/ScrollMotion";
-import SearchAvailableDogsEmbedded from "../shared/SearchAvailableDogsEmbedded";
 
 // Data for the benefits list to keep JSX clean
 const benefits = [
@@ -35,17 +34,23 @@ const WhyAdoptionMatters = () => {
     <div className="">
       {" "}
       <section className="relative py-20 lg:py-28 overflow-hidden">
+        {/* Top gradient blur transition */}
+        <div className="absolute top-0 left-0 right-0 h-40 md:h-48 bg-linear-to-b from-black/70 via-black/40 to-transparent backdrop-blur-md z-5" />
+
         {/* --- 1. Background Image Implementation --- */}
         <div className="absolute inset-0 -z-20">
           <Image
-            src="/assets/home/adoption-matters-bg-image.svg" // Replace with your actual background image path
+            src="/assets/home/adoption-bg.svg" // Replace with your actual background image path
             alt="Background Texture"
             fill
-            className="object-cover object-center"
+            className="object-cover object-center blur-[1px] brightness-[0.6]"
             quality={90}
           />
-          {/* Solid color overlay to match the deep blue brand color, making background image subtle */}
-          <div className="absolute inset-0 bg-[#003C5F]/5 mix-blend-multiply" />
+          {/* Multi-colored gradient blur overlay */}
+          <div className="absolute inset-0 bg-linear-to-bl from-cyan-900/50 via-teal-800/50 to-amber-800/50 backdrop-blur-md opacity-60" />
+          {/* Additional radial gradient for depth */}
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,var(--tw-gradient-stops))] from-cyan-800/25 via-transparent to-transparent" />
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,var(--tw-gradient-stops))] from-amber-500/25 via-transparent to-transparent" />
         </div>
 
         <div className="container mx-auto px-6 md:px-12 relative z-10">
@@ -155,34 +160,9 @@ const WhyAdoptionMatters = () => {
             </ScrollMotion>
           </div>
         </div>
-      </section>
-      {/* --- 2. Embedded Search Section --- */}
-      <section className="relative py-20 lg:py-28 overflow-hidden">
-        {/* --- 1. Background Image Implementation --- */}
-        <div className="absolute inset-0 -z-20">
-          <Image
-            src="/assets/home/adoption-matters-bg-image.svg" // Replace with your actual background image path
-            alt="Background Texture"
-            fill
-            className="object-cover object-center"
-            quality={90}
-          />
-          {/* Solid color overlay to match the deep blue brand color, making background image subtle */}
-          <div className="absolute inset-0 bg-[#003C5F]/5 mix-blend-multiply" />
-        </div>
-        <ScrollMotion delay={0.2}>
-          <div>
-            <h2
-              className="text-4xl lg:text-6xl font-extrabold mb-8 leading-tight font-serif text-center"
-              style={{ color: goldColor }}
-            >
-              Search Available Dogs
-            </h2>
-          </div>
-        </ScrollMotion>
-        <div className="relative z-10">
-          <SearchAvailableDogsEmbedded />
-        </div>
+
+        {/* Bottom gradient blur transition */}
+        <div className="absolute bottom-0 left-0 right-0 h-40 md:h-48 bg-linear-to-b from-transparent via-[#003C5F]/30 to-[#003C5F]/80 backdrop-blur-md z-5" />
       </section>
     </div>
   );

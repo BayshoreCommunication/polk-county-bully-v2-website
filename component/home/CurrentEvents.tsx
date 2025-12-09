@@ -8,8 +8,14 @@ const CurrentEvents = () => {
   const sectionBgColor = "#1F7A8C"; // Matching the teal background from the image
 
   return (
-    <section className="py-20" style={{ backgroundColor: sectionBgColor }}>
-      <div className="container mx-auto px-4 md:px-8">
+    <section
+      className="relative py-20"
+      style={{ backgroundColor: sectionBgColor }}
+    >
+      {/* Top gradient blur transition */}
+      <div className="absolute top-0 left-0 right-0 h-40 md:h-48 backdrop-blur-sm z-5" />
+
+      <div className="container mx-auto px-4 md:px-8 relative z-20">
         <ScrollMotion>
           <div className="max-w-3xl mx-auto text-center">
             {/* --- Heading --- */}
@@ -42,12 +48,15 @@ const CurrentEvents = () => {
                   </>
                 }
                 // Custom classes to match the specific pink color and 3D shadow effect
-                className="!bg-[#F424B2] hover:!bg-[#d91a9b] shadow-[0_6px_0_#9e1773] hover:shadow-[0_4px_0_#9e1773] hover:translate-y-1 text-xl px-12 py-3 rounded-full"
+                className="bg-[#F424B2]! hover:bg-[#d91a9b]! shadow-[0_6px_0_#9e1773] hover:shadow-[0_4px_0_#9e1773] hover:translate-y-1 text-xl px-12 py-3 rounded-full"
               />
             </div>
           </div>
         </ScrollMotion>
       </div>
+
+      {/* Bottom gradient blur transition */}
+      <div className="absolute bottom-0 left-0 right-0 h-40 md:h-48 backdrop-blur-sm z-5" />
     </section>
   );
 };
