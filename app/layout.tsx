@@ -1,7 +1,14 @@
 import Footer from "@/component/layout/Footer";
 import Navbar from "@/component/layout/Navbar";
+import { Poppins } from "next/font/google";
 import localFont from "next/font/local";
 import "./globals.css";
+
+const poppins = Poppins({
+  subsets: ["latin"],
+  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
+  variable: "--font-poppins",
+});
 
 const georgia = localFont({
   src: [
@@ -40,7 +47,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${georgia.variable} font-sans antialiased`}>
+      <body className={`${georgia.variable} ${poppins.variable} antialiased`}>
         <Navbar />
         {children}
         <Footer />

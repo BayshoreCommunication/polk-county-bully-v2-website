@@ -4,14 +4,11 @@ import Testimonials from "@/component/home/Testimonials";
 import PageHero from "@/component/shared/PageHero";
 
 export const metadata = {
-  title: "About | Polk County Bully Project",
+  title: "About Us - Our Mission & Story | Polk County Bully Project",
   description:
-    "Read testimonials from happy adopters and supporters of Polk County Bully Project. Discover heartwarming stories of rescued bully breeds finding their forever homes through our dedicated non-profit efforts in Polk County, FL.",
+    "Learn about the Polk County Bully Project, a non-profit dedicated to rescuing, rehabilitating, and finding forever homes for bully breeds in Polk County, FL. Meet our founders and see our impact.",
   alternates: {
-    canonical: "/",
-    languages: {
-      "en-US": "/en-USA",
-    },
+    canonical: "/about",
   },
   openGraph: {
     images: "/opengraph-image.jpg",

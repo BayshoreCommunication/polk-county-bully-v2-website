@@ -3,14 +3,11 @@ import LearnAboutBreeds from "@/component/learn/LearnAboutBreeds";
 import PageHero from "@/component/shared/PageHero";
 
 export const metadata = {
-  title: "Learn | Polk County Bully Project",
+  title: "Learn About Pit Bulls & Bully Breeds | Polk County Bully Project",
   description:
-    "Read testimonials from happy adopters and supporters of Polk County Bully Project. Discover heartwarming stories of rescued bully breeds finding their forever homes through our dedicated non-profit efforts in Polk County, FL.",
+    "Educate yourself about the truth regarding Pit Bulls. Discover breed characteristics, debunk common myths, and understand why they make amazing family companions.",
   alternates: {
-    canonical: "/",
-    languages: {
-      "en-US": "/en-USA",
-    },
+    canonical: "/learn",
   },
   openGraph: {
     images: "/opengraph-image.jpg",

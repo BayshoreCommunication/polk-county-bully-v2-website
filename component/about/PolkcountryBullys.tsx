@@ -1,3 +1,6 @@
+import adoptionBg from "@/public/assets/home/adoption-bg.svg";
+import medinaImg from "@/public/assets/about/medina.svg";
+import shannonImg from "@/public/assets/about/shannon.svg";
 import Image from "next/image";
 import ScrollMotion from "../motion/ScrollMotion";
 
@@ -10,9 +13,10 @@ const PolkcountryBullys = () => {
       {/* --- Background Image Layer --- */}
       <div className="absolute inset-0 -z-20">
         <Image
-          src="/assets/home/adoption-bg.svg"
+          src={adoptionBg}
           alt="Background Texture"
           fill
+          sizes="100vw"
           className="object-cover object-center blur-[1px] brightness-[0.6]"
         />
         {/* Gradient Overlays */}
@@ -33,11 +37,11 @@ const PolkcountryBullys = () => {
               {/* Image 1: Shannon (Left) - Rounded Top-Left */}
               <div className="flex-1 relative aspect-[3/4] rounded-tl-[4rem] rounded-tr-xl rounded-bl-xl rounded-br-xl overflow-hidden border-4 border-gray-300 shadow-xl bg-gray-200">
                 <Image
-                  src="/assets/about/shannon.svg"
+                  src={shannonImg}
                   alt="Shannon Medina"
+                  fill
+                  sizes="(max-width: 768px) 50vw, 25vw"
                   className="object-cover object-center"
-                  width={500}
-                  height={500}
                 />
               </div>
 
@@ -45,11 +49,11 @@ const PolkcountryBullys = () => {
               <div className="flex-1 relative aspect-[3/4] rounded-tl-xl rounded-tr-xl rounded-bl-xl rounded-br-[4rem] overflow-hidden border-4 border-gray-300 shadow-xl bg-gray-200">
                 {/* Note: Ensure you have this image asset or change the path */}
                 <Image
-                  src="/assets/about/medina.svg"
+                  src={medinaImg}
                   alt="Angie Lorio"
+                  fill
+                  sizes="(max-width: 768px) 50vw, 25vw"
                   className="object-cover object-center"
-                  width={500}
-                  height={500}
                 />
               </div>
             </div>

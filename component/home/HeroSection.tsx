@@ -1,5 +1,6 @@
 "use client"; // Required for framer-motion
 
+import heroBg from "@/public/assets/home/hero-bg.svg";
 import {
   animate,
   motion,
@@ -81,12 +82,11 @@ const HeroSection = () => {
       {/* --- Background Image --- */}
       <div className="absolute inset-0 z-0 top-0">
         <Image
-          src="/assets/home/hero-bg.svg"
+          src={heroBg}
           alt="Hero Background Art"
           fill
           priority
           className="object-cover object-center fixed inset-0 blur-[1px] brightness-[0.6]"
-          quality={100}
           sizes="100vw"
         />
         {/* Multi-colored gradient blur overlay */}

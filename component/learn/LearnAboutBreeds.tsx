@@ -14,6 +14,7 @@ const LearnAboutBreeds = () => {
           src="/assets/home/adoption-bg.svg" // Replace with your actual background image path
           alt="Background Texture"
           fill
+          sizes="100vw"
           className="object-cover object-center blur-[1px] brightness-[0.6]"
         />
         {/* Multi-colored gradient blur overlay */}
@@ -57,6 +58,7 @@ const LearnAboutBreeds = () => {
                 src="/assets/home/foster-right-image.svg" // Large vertical dog image
                 alt="Blue Pit Bull standing"
                 fill
+                sizes="(max-width: 768px) 55vw, 25vw"
                 className="object-cover"
               />
             </div>
@@ -67,6 +69,7 @@ const LearnAboutBreeds = () => {
                 src="/assets/home/foster-left-image.svg" // Top right dog image
                 alt="Tan Pit Bull being petted"
                 fill
+                sizes="(max-width: 768px) 42vw, 20vw"
                 className="object-cover"
               />
             </div>
@@ -77,6 +80,7 @@ const LearnAboutBreeds = () => {
                 src="/assets/dog/dog4.jpg" // Bottom right dog image
                 alt="Brown Pit Bull with bandana"
                 fill
+                sizes="(max-width: 768px) 42vw, 20vw"
                 className="object-cover"
               />
             </div>

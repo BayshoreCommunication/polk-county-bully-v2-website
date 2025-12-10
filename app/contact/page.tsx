@@ -4,14 +4,11 @@ import PageHero from "@/component/shared/PageHero";
 import SpreadTheWord from "@/component/shared/SpreadTheWord";
 
 export const metadata = {
-  title: "Contact | Polk County Bully Project",
+  title: "Contact Us - Get in Touch | Polk County Bully Project",
   description:
-    "Read testimonials from happy adopters and supporters of Polk County Bully Project. Discover heartwarming stories of rescued bully breeds finding their forever homes through our dedicated non-profit efforts in Polk County, FL.",
+    "Have questions about adoption, volunteering, or donating? Contact the Polk County Bully Project team. We are here to help you help our dogs.",
   alternates: {
-    canonical: "/",
-    languages: {
-      "en-US": "/en-USA",
-    },
+    canonical: "/contact",
   },
   openGraph: {
     images: "/opengraph-image.jpg",

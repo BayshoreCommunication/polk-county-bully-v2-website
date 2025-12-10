@@ -61,13 +61,10 @@ const Navbar = () => {
                     <span className="relative z-10">{item.name}</span>
                     {isActive && (
                       <motion.div
-                        layoutId="navbar-underline"
                         className="absolute bottom-0 left-0 right-0 h-0.5 bg-[#FFD700]"
-                        transition={{
-                          type: "spring",
-                          bounce: 0.2,
-                          duration: 0.6,
-                        }}
+                        initial={{ scaleX: 0 }}
+                        animate={{ scaleX: 1 }}
+                        transition={{ duration: 0.3, ease: "easeOut" }}
                       />
                     )}
                     {item.href === hoveredPath && !isActive && (

@@ -1,3 +1,10 @@
+import mugMockup from "@/public/assets/home/12mug_mockup 1.svg";
+import maskGroup from "@/public/assets/home/Mask group.svg";
+import bullyBottle from "@/public/assets/home/bully_bottle 1.svg";
+import bullyCap from "@/public/assets/home/bully_cap 1.svg";
+import bullyCase from "@/public/assets/home/bully_case 1.svg";
+import bullyTshirt from "@/public/assets/home/bully_tshirt_1 1.svg";
+import backpackGirl from "@/public/assets/home/young-girl-with-gray-student-backpack 2.svg";
 import { PawPrint } from "lucide-react";
 import Image from "next/image";
 import ScrollMotion from "../motion/ScrollMotion";
@@ -7,37 +14,37 @@ import Button from "../shared/Button";
 const products = [
   {
     id: 1,
-    src: "/assets/home/12mug_mockup 1.svg",
+    src: mugMockup,
     alt: "Bully Project T-Shirt Black",
   },
   {
     id: 2,
-    src: "/assets/home/bully_bottle 1.svg",
+    src: bullyBottle,
     alt: "Bully Project Coffee Mug",
   },
   {
     id: 3,
-    src: "/assets/home/bully_case 1.svg",
+    src: bullyCase,
     alt: "Bully Project Phone Case",
   },
   {
     id: 4,
-    src: "/assets/home/bully_tshirt_1 1.svg",
+    src: bullyTshirt,
     alt: "Bully Project Backpack",
   },
   {
     id: 5,
-    src: "/assets/home/Mask group.svg",
+    src: maskGroup,
     alt: "Bully Project Water Bottle",
   },
   {
     id: 6,
-    src: "/assets/home/bully_cap 1.svg",
+    src: bullyCap,
     alt: "Bully Project T-Shirt Grey",
   },
   {
     id: 7,
-    src: "/assets/home/young-girl-with-gray-student-backpack 2.svg",
+    src: backpackGirl,
     alt: "Bully Project Cap",
   },
 ];
@@ -85,6 +92,7 @@ const Merchandise = () => {
                 src={product.src}
                 alt={product.alt}
                 fill
+                sizes="(max-width: 768px) 45vw, 25vw"
                 className="object-cover transition-transform duration-500 group-hover:scale-110"
               />
 

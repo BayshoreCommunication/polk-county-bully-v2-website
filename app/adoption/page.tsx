@@ -3,14 +3,11 @@ import PageHero from "@/component/shared/PageHero";
 import SpreadTheWord from "@/component/shared/SpreadTheWord";
 
 export const metadata = {
-  title: "Adoption | Polk County Bully Project",
+  title: "Adopt a Bully Breed Dog | Polk County Bully Project",
   description:
-    "Read testimonials from happy adopters and supporters of Polk County Bully Project. Discover heartwarming stories of rescued bully breeds finding their forever homes through our dedicated non-profit efforts in Polk County, FL.",
+    "Ready to adopt? Explore our adoption process and find your new best friend. Give a loving forever home to a rescued pit bull or bully breed dog in Polk County today.",
   alternates: {
-    canonical: "/",
-    languages: {
-      "en-US": "/en-USA",
-    },
+    canonical: "/adoption",
   },
   openGraph: {
     images: "/opengraph-image.jpg",

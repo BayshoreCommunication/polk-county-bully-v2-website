@@ -90,9 +90,9 @@ const AboutPitBulls = () => {
                 can truly offer.
               </p>
 
-              <div className="relative w-full h-full rounded-[3rem] overflow-hidden border-4 border-white/10 shadow-2xl  bg-black/20 mb-12 p-4 md:p-10">
+              <div className="relative w-full h-full rounded-[3rem] overflow-hidden border-4 border-white/10 shadow-2xl bg-black/20 mb-12 p-6 md:p-12">
                 <h2
-                  className="text-2xl md:text-3xl lg:text-4xl font-extrabold font-serif tracking-wide leading-tight mb-4 text-center px-0 md:px-16"
+                  className="text-2xl md:text-3xl lg:text-4xl font-extrabold font-serif tracking-wide leading-tight mb-8 text-center md:px-8"
                   style={{
                     color: goldColor,
                     textShadow: "2px 2px 4px rgba(0,0,0,0.4)",
@@ -102,54 +102,34 @@ const AboutPitBulls = () => {
                   this breed and their stereotypes
                 </h2>
 
-                <p className="text-white/90 text-sm leading-relaxed mb-4 mt-6">
-                  Let’s start with the fact that Pit Bulls are not actually a
-                  breed of dog. The term refers to a variety of breeds of about
-                  10 dogs, like the American Staffordshire terrier,
-                  Staffordshire bull terrier, bulldog, and other such mixes of
-                  dogs. It is a generic term often used to describe all dogs
-                  with similar traits and characteristics often known in general
-                  public as “Pit Bulls”. While there is an American Pit Bull
-                  Terrier breed, they only make up a very small percentage of
-                  dogs.
-                </p>
-                <p className="text-white/90 text-sm leading-relaxed mb-4">
-                  Let’s start with the fact that Pit Bulls are not actually a
-                  breed of dog. The term refers to a variety of breeds of about
-                  10 dogs, like the American Staffordshire terrier,
-                  Staffordshire bull terrier, bulldog, and other such mixes of
-                  dogs. It is a generic term often used to describe all dogs
-                  with similar traits and characteristics often known in general
-                  public as “Pit Bulls”. While there is an American Pit Bull
-                  Terrier breed, they only make up a very small percentage of
-                  dogs.
-                </p>
-                <p className="text-white/90 text-sm leading-relaxed mb-4">
-                  They were originally bred to drive and catch livestock and to
-                  serve as the ideal family companions.
-                </p>
-                <p className="text-white/90 text-sm leading-relaxed mb-4">
-                  Pit Bulls were not bred as guard dogs because they were too
-                  friendly.
-                </p>
-                <p className="text-white/90 text-sm leading-relaxed mb-4">
-                  They do not have locking jaws. This is a myth!
-                </p>
-                <p className="text-white/90 text-sm leading-relaxed mb-4">
-                  To piggyback on fact number five: Pit Bulls also don’t have
-                  the strongest bite among all dog breeds. German Shepherds and
-                  Rottweilers actually have a more powerful bite.
-                </p>
-                <p className="text-white/90 text-sm leading-relaxed mb-4">
-                  As many as 75% of mixed breed dogs in animal shelters,
-                  including Pit Bulls and Pit Bull mixes, are misidentified as
-                  the wrong breed.
-                </p>
-                <p className="text-white/90 text-sm leading-relaxed mb-4">
-                  They are not inherently aggressive dogs. In fact, in
-                  temperance tests, Pit Bulls were the second most tolerant
-                  breed behind Golden Retrievers. The least tolerant was the
-                </p>
+                <div className="space-y-6">
+                  {[
+                    "Let’s start with the fact that Pit Bulls are not actually a breed of dog. The term refers to a variety of breeds of about 10 dogs, like the American Staffordshire terrier, Staffordshire bull terrier, bulldog, and other such mixes of dogs. It is a generic term often used to describe all dogs with similar traits and characteristics often known in general public as “Pit Bulls”. While there is an American Pit Bull Terrier breed, they only make up a very small percentage of dogs.",
+                    "They were originally bred to drive and catch livestock and to serve as the ideal family companions.",
+                    "Pit Bulls were not bred as guard dogs because they were too friendly.",
+                    "They do not have locking jaws. This is a myth!",
+                    "To piggyback on the previous fact: Pit Bulls also don’t have the strongest bite among all dog breeds. German Shepherds and Rottweilers actually have a more powerful bite.",
+                    "As many as 75% of mixed breed dogs in animal shelters, including Pit Bulls and Pit Bull mixes, are misidentified as the wrong breed.",
+                    "They are not inherently aggressive dogs. In fact, in temperance tests, Pit Bulls were the second most tolerant breed behind Golden Retrievers. The least tolerant was the Chihuahua.",
+                  ].map((fact, index) => (
+                    <div key={index} className="flex gap-4 md:gap-6 items-start">
+                      {/* Serial Number */}
+                      <div
+                        className="flex-shrink-0 w-10 h-10 md:w-12 md:h-12 rounded-full flex items-center justify-center font-bold text-lg md:text-xl shadow-lg border-2 border-white/20"
+                        style={{
+                          backgroundColor: goldColor,
+                          color: "#003845", // Dark teal for contrast
+                        }}
+                      >
+                        {index + 1}
+                      </div>
+                      {/* Fact Text */}
+                      <p className="text-white/90 text-sm md:text-base leading-relaxed pt-1 text-left">
+                        {fact}
+                      </p>
+                    </div>
+                  ))}
+                </div>
               </div>
 
               <h2

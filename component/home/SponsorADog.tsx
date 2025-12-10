@@ -1,5 +1,10 @@
+import dog1 from "@/public/assets/dog/dog1.jpg";
+import dog2 from "@/public/assets/dog/dog2.jpg";
+import dog3 from "@/public/assets/dog/dog3.jpg";
+import dog4 from "@/public/assets/dog/dog4.jpg";
+import dog5 from "@/public/assets/dog/dog5.jpg";
 import { PawPrint } from "lucide-react";
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 import ScrollMotion from "../motion/ScrollMotion"; // Assuming you have this from previous steps
 import Button from "../shared/Button";
 
@@ -9,14 +14,20 @@ const DogCircle = ({
   alt,
   className = "",
 }: {
-  src: string;
+  src: string | StaticImageData;
   alt: string;
   className?: string;
 }) => (
   <div
     className={`relative w-36 h-36 md:w-48 md:h-48 lg:w-56 lg:h-56 rounded-full overflow-hidden border-[6px] border-white shadow-xl shrink-0 ${className}`}
   >
-    <Image src={src} alt={alt} fill className="object-cover" />
+    <Image
+      src={src}
+      alt={alt}
+      fill
+      sizes="(max-width: 768px) 150px, 250px"
+      className="object-cover"
+    />
   </div>
 );
 
@@ -41,18 +52,18 @@ const SponsorADog = () => {
             {/* Top Left */}
             <ScrollMotion delay={0.1} className="md:translate-y-8">
               {/* Added translate-y-8 to push side dogs down slightly, creating an ARCH */}
-              <DogCircle src="/assets/dog/dog1.jpg" alt="Sponsor dog 1" />
+              <DogCircle src={dog1} alt="Sponsor dog 1" />
             </ScrollMotion>
 
             {/* Top Center */}
             <ScrollMotion delay={0.2} className="md:-translate-y-4">
               {/* Negative translate pulls the middle dog UP, enhancing the arch effect */}
-              <DogCircle src="/assets/dog/dog2.jpg" alt="Sponsor dog 2" />
+              <DogCircle src={dog2} alt="Sponsor dog 2" />
             </ScrollMotion>
 
             {/* Top Right */}
             <ScrollMotion delay={0.3} className="md:translate-y-8">
-              <DogCircle src="/assets/dog/dog3.jpg" alt="Sponsor dog 3" />
+              <DogCircle src={dog3} alt="Sponsor dog 3" />
             </ScrollMotion>
           </div>
 
@@ -60,7 +71,7 @@ const SponsorADog = () => {
           <div className="flex flex-col md:flex-row items-center justify-between gap-10 md:gap-4 relative z-0">
             {/* Left Dog (Bottom Row) */}
             <ScrollMotion delay={0.4} className="order-2 md:order-1">
-              <DogCircle src="/assets/dog/dog4.jpg" alt="Sponsor dog 4" />
+              <DogCircle src={dog4} alt="Sponsor dog 4" />
             </ScrollMotion>
 
             {/* --- Central Text & Button --- */}
@@ -94,7 +105,7 @@ const SponsorADog = () => {
 
             {/* Right Dog (Bottom Row) */}
             <ScrollMotion delay={0.6} className="order-3 md:order-3">
-              <DogCircle src="/assets/dog/dog5.jpg" alt="Sponsor dog 5" />
+              <DogCircle src={dog5} alt="Sponsor dog 5" />
             </ScrollMotion>
           </div>
         </div>

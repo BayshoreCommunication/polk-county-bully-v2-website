@@ -1,3 +1,5 @@
+import adoptionDog from "@/public/assets/adoption/adoption-process-dog.svg";
+import adoptionBg from "@/public/assets/home/adoption-bg.svg";
 import { PawPrint } from "lucide-react";
 import Image from "next/image";
 import ScrollMotion from "../motion/ScrollMotion";
@@ -14,7 +16,7 @@ const AdoptionProcess = () => {
       {/* --- ADDED: Background Image Implementation --- */}
       <div className="absolute inset-0 -z-20">
         <Image
-          src="/assets/home/adoption-bg.svg" // Replace with your actual background image path
+          src={adoptionBg} // Replace with your actual background image path
           alt="Background Texture"
           fill
           className="object-cover object-center blur-[1px] brightness-[0.6]"
@@ -49,7 +51,7 @@ const AdoptionProcess = () => {
             className="relative w-full aspect-video md:aspect-[16/9] rounded-3xl overflow-hidden shadow-2xl mb-12 border-4 border-white/10"
           >
             <Image
-              src="/assets/adoption/adoption-process-dog.svg" // Replace with your image
+              src={adoptionDog} // Replace with your image
               alt="Rescue dog on grass with van in background"
               fill
               className="object-cover"
