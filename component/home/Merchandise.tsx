@@ -1,3 +1,5 @@
+"use client";
+
 import mugMockup from "@/public/assets/home/12mug_mockup 1.svg";
 import maskGroup from "@/public/assets/home/Mask group.svg";
 import bullyBottle from "@/public/assets/home/bully_bottle 1.svg";
@@ -6,7 +8,8 @@ import bullyCase from "@/public/assets/home/bully_case 1.svg";
 import bullyTshirt from "@/public/assets/home/bully_tshirt_1 1.svg";
 import backpackGirl from "@/public/assets/home/young-girl-with-gray-student-backpack 2.svg";
 import { PawPrint } from "lucide-react";
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
+import { useState } from "react";
 import ScrollMotion from "../motion/ScrollMotion";
 import Button from "../shared/Button";
 
@@ -49,6 +52,34 @@ const products = [
   },
 ];
 
+const MerchandiseItem = ({
+  src,
+  alt,
+}: {
+  src: StaticImageData;
+  alt: string;
+}) => {
+  const [isLoading, setIsLoading] = useState(true);
+
+  return (
+    <>
+      {isLoading && (
+        <div className="absolute inset-0 bg-gray-200 animate-pulse z-10" />
+      )}
+      <Image
+        src={src}
+        alt={alt}
+        fill
+        sizes="(max-width: 768px) 45vw, 25vw"
+        className={`object-cover transition-transform duration-500 group-hover:scale-110 ${
+          isLoading ? "opacity-0" : "opacity-100"
+        }`}
+        onLoad={() => setIsLoading(false)}
+      />
+    </>
+  );
+};
+
 const Merchandise = () => {
   // Matching the Gold color from previous sections
   const goldColor = "#FFD700";
@@ -85,19 +116,12 @@ const Merchandise = () => {
             <ScrollMotion
               key={product.id}
               delay={index * 0.05} // Stagger effect
-              className="relative group w-[45%] md:w-[22%] aspect-square rounded-4xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300"
+              className="relative group w-[45%] md:w-[22%] aspect-square rounded-4xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 bg-gray-100"
             >
-              {/* Product Image */}
-              <Image
-                src={product.src}
-                alt={product.alt}
-                fill
-                sizes="(max-width: 768px) 45vw, 25vw"
-                className="object-cover transition-transform duration-500 group-hover:scale-110"
-              />
+              <MerchandiseItem src={product.src} alt={product.alt} />
 
               {/* Optional: Hover Overlay */}
-              <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20" />
             </ScrollMotion>
           ))}
         </div>

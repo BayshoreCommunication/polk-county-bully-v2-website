@@ -1,3 +1,5 @@
+"use client";
+
 import dog1 from "@/public/assets/dog/dog1.jpg";
 import dog2 from "@/public/assets/dog/dog2.jpg";
 import dog3 from "@/public/assets/dog/dog3.jpg";
@@ -5,6 +7,7 @@ import dog4 from "@/public/assets/dog/dog4.jpg";
 import dog5 from "@/public/assets/dog/dog5.jpg";
 import { PawPrint } from "lucide-react";
 import Image, { StaticImageData } from "next/image";
+import { useState } from "react";
 import ScrollMotion from "../motion/ScrollMotion"; // Assuming you have this from previous steps
 import Button from "../shared/Button";
 
@@ -17,19 +20,29 @@ const DogCircle = ({
   src: string | StaticImageData;
   alt: string;
   className?: string;
-}) => (
-  <div
-    className={`relative w-36 h-36 md:w-48 md:h-48 lg:w-56 lg:h-56 rounded-full overflow-hidden border-[6px] border-white shadow-xl shrink-0 ${className}`}
-  >
-    <Image
-      src={src}
-      alt={alt}
-      fill
-      sizes="(max-width: 768px) 150px, 250px"
-      className="object-cover"
-    />
-  </div>
-);
+}) => {
+  const [isLoading, setIsLoading] = useState(true);
+
+  return (
+    <div
+      className={`relative w-36 h-36 md:w-48 md:h-48 lg:w-56 lg:h-56 rounded-full overflow-hidden border-[6px] border-white shadow-xl shrink-0 ${className} bg-gray-100`}
+    >
+      {isLoading && (
+        <div className="absolute inset-0 bg-gray-300 animate-pulse z-20" />
+      )}
+      <Image
+        src={src}
+        alt={alt}
+        fill
+        sizes="(max-width: 768px) 150px, 250px"
+        className={`object-cover transition-opacity duration-500 ${
+          isLoading ? "opacity-0" : "opacity-100"
+        }`}
+        onLoad={() => setIsLoading(false)}
+      />
+    </div>
+  );
+};
 
 const SponsorADog = () => {
   const sectionBgColor = "#009AD9";
