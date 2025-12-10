@@ -7,71 +7,74 @@ const PolkcountryBullys = () => {
 
   return (
     <section className="relative py-24 overflow-hidden">
-      {/* --- Background Image Implementation (Same as AdoptionProcess) --- */}
-      {/* --- 1. Background Image Implementation --- */}
+      {/* --- Background Image Layer --- */}
       <div className="absolute inset-0 -z-20">
         <Image
-          src="/assets/home/adoption-bg.svg" // Replace with your actual background image path
+          src="/assets/home/adoption-bg.svg"
           alt="Background Texture"
           fill
           className="object-cover object-center blur-[1px] brightness-[0.6]"
-          quality={90}
         />
-        {/* Multi-colored gradient blur overlay */}
+        {/* Gradient Overlays */}
         <div className="absolute inset-0 bg-linear-to-bl from-cyan-900/50 via-teal-800/50 to-amber-800/50 backdrop-blur-md opacity-60" />
-        {/* Additional radial gradient for depth */}
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,var(--tw-gradient-stops))] from-cyan-800/25 via-transparent to-transparent" />
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,var(--tw-gradient-stops))] from-amber-500/25 via-transparent to-transparent" />
       </div>
 
       <div className="container mx-auto px-4 md:px-8 relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center max-w-6xl mx-auto">
-          {/* --- Right Column: Image Collage --- */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center max-w-7xl mx-auto">
+          {/* --- Left Column: Founders Images --- */}
           <ScrollMotion
             delay={0.2}
-            className="relative w-full max-w-md mx-auto lg:mx-0 h-[400px] md:h-[500px]"
+            className="relative w-full max-w-2xl mx-auto lg:mx-0"
           >
-            {/* 1. Main Vertical Image (Left) */}
-            <div className="absolute left-0 top-1/2 -translate-y-1/2 w-[55%] h-[90%] border-[5px] border-white shadow-2xl z-10 relative">
-              <Image
-                src="/assets/home/foster-right-image.svg" // Large vertical dog image
-                alt="Blue Pit Bull standing"
-                fill
-                className="object-cover"
-              />
+            {/* Founders Grid Container */}
+            <div className="flex gap-4 md:gap-6 items-stretch">
+              {/* Image 1: Shannon (Left) - Rounded Top-Left */}
+              <div className="flex-1 relative aspect-[3/4] rounded-tl-[4rem] rounded-tr-xl rounded-bl-xl rounded-br-xl overflow-hidden border-4 border-gray-300 shadow-xl bg-gray-200">
+                <Image
+                  src="/assets/about/shannon.svg"
+                  alt="Shannon Medina"
+                  className="object-cover object-center"
+                  width={500}
+                  height={500}
+                />
+              </div>
+
+              {/* Image 2: Angie (Right) - Rounded Bottom-Right (Diagonal symmetry) */}
+              <div className="flex-1 relative aspect-[3/4] rounded-tl-xl rounded-tr-xl rounded-bl-xl rounded-br-[4rem] overflow-hidden border-4 border-gray-300 shadow-xl bg-gray-200">
+                {/* Note: Ensure you have this image asset or change the path */}
+                <Image
+                  src="/assets/about/medina.svg"
+                  alt="Angie Lorio"
+                  className="object-cover object-center"
+                  width={500}
+                  height={500}
+                />
+              </div>
             </div>
 
-            {/* 2. Secondary Image (Top Right) */}
-            <div className="absolute right-0 top-0 w-[42%] aspect-square border-[5px] border-white shadow-xl z-0">
-              <Image
-                src="/assets/home/foster-left-image.svg" // Top right dog image
-                alt="Tan Pit Bull being petted"
-                fill
-                className="object-cover"
-              />
-            </div>
-
-            {/* 3. Tertiary Image (Bottom Right) */}
-            <div className="absolute right-0 bottom-0 w-[42%] aspect-square border-[5px] border-white shadow-xl z-0">
-              <Image
-                src="/assets/dog/dog4.jpg" // Bottom right dog image
-                alt="Brown Pit Bull with bandana"
-                fill
-                className="object-cover"
-              />
+            {/* Caption */}
+            <div className="mt-6 text-white bg-black/20 backdrop-blur-sm p-4 rounded-xl border border-white/10">
+              <p className="text-sm md:text-base font-bold text-[#FFD700] mb-1">
+                Bully Project Rescue Founders:
+              </p>
+              <p className="text-sm md:text-base leading-snug opacity-90">
+                Shannon Medina (Left) and Angie Lorio (Right).
+              </p>
             </div>
           </ScrollMotion>
-          {/* --- Left Column: Text Content --- */}
+
+          {/* --- Right Column: Text Content --- */}
           <ScrollMotion className="text-left">
             <h2
               className="text-4xl md:text-5xl lg:text-6xl font-extrabold font-serif tracking-wide leading-tight mb-6"
               style={{
                 color: goldColor,
-                // Dark shadow for contrast against teal
                 textShadow: "2px 2px 4px rgba(0,0,0,0.4)",
               }}
             >
-              Polk country Bully Project
+              Polk Country Bully Project
             </h2>
 
             <p className="text-lg md:text-xl leading-relaxed text-gray-100/90 font-medium">

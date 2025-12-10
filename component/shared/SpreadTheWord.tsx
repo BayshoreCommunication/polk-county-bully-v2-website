@@ -10,10 +10,26 @@ const SpreadTheWord = () => {
 
   // Social media links data
   const socialLinks = [
-    { icon: Facebook, href: "https://facebook.com", label: "Facebook" },
-    { icon: Instagram, href: "https://instagram.com", label: "Instagram" },
-    { icon: Video, href: "https://tiktok.com", label: "TikTok" },
-    { icon: Youtube, href: "https://youtube.com", label: "YouTube" },
+    {
+      icon: Facebook,
+      href: "https://www.facebook.com/polkcountybullyproject",
+      label: "Facebook",
+    },
+    {
+      icon: Instagram,
+      href: "https://www.instagram.com/polkcountybullyproject",
+      label: "Instagram",
+    },
+    {
+      icon: Video,
+      href: "https://www.tiktok.com/@polkcountybullyproject",
+      label: "TikTok",
+    },
+    {
+      icon: Youtube,
+      href: "https://www.youtube.com/@TheBullyProjecct",
+      label: "YouTube",
+    },
   ];
 
   return (
@@ -28,7 +44,6 @@ const SpreadTheWord = () => {
           alt="Colorful blurry background texture"
           fill
           className="object-cover object-center brightness-[0.6]"
-          quality={90}
         />
         {/* Multi-colored gradient blur overlay */}
         <div className="absolute inset-0 bg-linear-to-bl from-cyan-900/20 via-teal-800/20 to-amber-800/20 backdrop-blur-md opacity-10" />

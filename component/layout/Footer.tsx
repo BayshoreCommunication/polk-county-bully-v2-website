@@ -1,7 +1,9 @@
-import { ChevronRight, Facebook, Globe, Linkedin, Twitter } from "lucide-react";
+import { ChevronRight, Facebook } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
+import { FiYoutube } from "react-icons/fi";
+import { PiInstagramLogoBold, PiTiktokLogo } from "react-icons/pi";
 
 // Define types
 type LinkItem = {
@@ -110,17 +112,37 @@ const Footer: React.FC = () => {
           <div className="lg:mt-[70px]">
             <h3 className="text-xl font-bold mb-6">Contact Us</h3>
             <div className="flex space-x-4">
-              <Link href="#" className="hover:opacity-80 transition-opacity">
-                <Globe className="w-8 h-8" />
-              </Link>
-              <Link href="#" className="hover:opacity-80 transition-opacity">
+              <Link
+                href="https://www.facebook.com/polkcountybullyproject"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:opacity-80 transition-opacity"
+              >
                 <Facebook className="w-8 h-8" />
               </Link>
-              <Link href="#" className="hover:opacity-80 transition-opacity">
-                <Twitter className="w-8 h-8" />
+              <Link
+                href="https://www.instagram.com/polkcountybullyproject"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:opacity-80 transition-opacity"
+              >
+                <PiInstagramLogoBold className="w-8 h-8" />
               </Link>
-              <Link href="#" className="hover:opacity-80 transition-opacity">
-                <Linkedin className="w-8 h-8" />
+              <Link
+                href="https://www.tiktok.com/@polkcountybullyproject"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:opacity-80 transition-opacity"
+              >
+                <PiTiktokLogo className="w-8 h-8" />
+              </Link>
+              <Link
+                href="https://www.youtube.com/@TheBullyProjecct"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:opacity-80 transition-opacity"
+              >
+                <FiYoutube className="w-8 h-8" />
               </Link>
             </div>
           </div>

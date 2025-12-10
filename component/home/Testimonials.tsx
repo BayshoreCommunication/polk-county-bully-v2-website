@@ -69,7 +69,6 @@ const Testimonials = () => {
           alt="Colorful graffiti art background"
           fill
           className="object-cover object-center blur-[1px] brightness-[0.6]"
-          quality={90}
         />
         {/* Multi-colored gradient blur overlay */}
         <div className="absolute inset-0 bg-linear-to-bl from-cyan-900/50 via-teal-800/50 to-amber-800/50 backdrop-blur-md opacity-60" />
@@ -91,7 +90,7 @@ const Testimonials = () => {
             Our Client Testimonial
           </h2>
           <p className="text-white text-lg md:text-xl font-medium tracking-wide drop-shadow-md">
-            Hear from families who've found their perfect furry companions.
+            Hear from families who&apos;ve found their perfect furry companions.
           </p>
         </ScrollMotion>
 

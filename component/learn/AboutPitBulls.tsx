@@ -1,3 +1,4 @@
+import Image from "next/image";
 import ScrollMotion from "../motion/ScrollMotion"; // Adjust path to your ScrollMotion component
 
 const AboutPitBulls = () => {
@@ -8,13 +9,12 @@ const AboutPitBulls = () => {
     <section className="relative py-24 overflow-hidden">
       {/* --- Background Image Layer --- */}
       <div className="absolute inset-0 -z-20">
-        {/* <Image
-          src="/assets/adoption/adoption-bg.svg" // Reuse your shared background
+        <Image
+          src="/assets/home/adoption-bg.svg" // Reuse your shared background
           alt="Background Texture"
           fill
           className="object-cover object-center"
-          quality={90}
-        /> */}
+        />
         {/* Deep Teal Overlay */}
         <div className="absolute inset-0 bg-[#006D77]/95 mix-blend-multiply" />
       </div>

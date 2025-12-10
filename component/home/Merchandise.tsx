@@ -77,7 +77,7 @@ const Merchandise = () => {
           {products.map((product, index) => (
             <ScrollMotion
               key={product.id}
-              delay={index * 0.1} // Stagger effect
+              delay={index * 0.05} // Stagger effect
               className="relative group w-[45%] md:w-[22%] aspect-square rounded-4xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300"
             >
               {/* Product Image */}
@@ -95,7 +95,7 @@ const Merchandise = () => {
         </div>
 
         {/* --- CTA Button --- */}
-        <ScrollMotion delay={0.4}>
+        <ScrollMotion delay={0.2}>
           <div className="flex justify-center">
             <Button
               href="/shop"

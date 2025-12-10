@@ -18,7 +18,6 @@ const AdoptionProcess = () => {
           alt="Background Texture"
           fill
           className="object-cover object-center blur-[1px] brightness-[0.6]"
-          quality={90}
         />
         {/* Multi-colored gradient blur overlay */}
         <div className="absolute inset-0 bg-linear-to-bl from-cyan-900/50 via-teal-800/50 to-amber-800/50 backdrop-blur-md opacity-60" />
@@ -67,9 +66,9 @@ const AdoptionProcess = () => {
             </h3>
 
             <p className="text-lg md:text-xl leading-relaxed text-gray-100/90 max-w-3xl mx-auto">
-              If you haven't fallen in love with one of our pit bulls yet, you
+              If you haven&apos;t fallen in love with one of our pit bulls yet, you
               can see all of the dogs who are ready for a forever home here.
-              Once you've chosen the dog you'd like to adopt, you can submit
+              Once you&apos;ve chosen the dog you&apos;d like to adopt, you can submit
               your application for adoption here!
             </p>
 

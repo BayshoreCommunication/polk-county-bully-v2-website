@@ -48,7 +48,7 @@ const Volunteer = () => {
           {/* Right: Description */}
           <ScrollMotion delay={0.2} className="lg:w-1/2">
             <p className="text-white text-lg md:text-xl font-medium leading-relaxed drop-shadow-md border-l-4 border-[#F424B2] pl-6">
-              Every helping hand creates a ripple of change. Whether it's
+              Every helping hand creates a ripple of change. Whether it&apos;s
               transport, events, or sharing a post — your time can be the reason
               a dog finds their forever home.
             </p>

@@ -75,7 +75,7 @@ const SponsorADog = () => {
                 <p className="text-white text-lg leading-relaxed mb-8 font-medium drop-shadow-md">
                   While they wait for their forever home, you can be their
                   guardian angel. Your sponsorship covers food, vet visits, and
-                  care for a dog who's still dreaming of a family.
+                  care for a dog who&apos;s still dreaming of a family.
                 </p>
                 <div className="flex justify-center">
                   <Button

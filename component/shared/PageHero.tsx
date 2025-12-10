@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
+import ScrollMotion from "../motion/ScrollMotion";
 
 interface PageHeroProps {
   bgImage: string;
@@ -25,7 +26,7 @@ const PageHero: React.FC<PageHeroProps> = ({ bgImage, title, currentPage }) => {
       </div>
 
       {/* --- Content Layer --- */}
-      <div className="relative z-10 px-4 animate-fadeIn pt-4 md:pt-8">
+      <ScrollMotion className="relative z-10 px-4 pt-4 md:pt-8">
         {/* Title */}
         <h1
           className="text-5xl md:text-6xl lg:text-7xl font-extrabold text-[#FFD700] mb-3 font-serif tracking-wide"
@@ -48,7 +49,7 @@ const PageHero: React.FC<PageHeroProps> = ({ bgImage, title, currentPage }) => {
           <span className="mx-2">/</span>
           <span>{currentPage}</span>
         </p>
-      </div>
+      </ScrollMotion>
     </div>
   );
 };

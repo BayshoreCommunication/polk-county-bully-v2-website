@@ -15,7 +15,6 @@ const LearnAboutBreeds = () => {
           alt="Background Texture"
           fill
           className="object-cover object-center blur-[1px] brightness-[0.6]"
-          quality={90}
         />
         {/* Multi-colored gradient blur overlay */}
         <div className="absolute inset-0 bg-linear-to-bl from-cyan-900/50 via-teal-800/50 to-amber-800/50 backdrop-blur-md opacity-60" />
