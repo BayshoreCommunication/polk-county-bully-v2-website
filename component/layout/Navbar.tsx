@@ -9,8 +9,8 @@ import { useState } from "react";
 const navItems = [
   { name: "Home", href: "/" },
   { name: "Adoption", href: "/adoption" },
-  { name: "About", href: "/about" },
   { name: "Learn", href: "/learn" },
+  { name: "About", href: "/about" },
   { name: "Contact", href: "/contact" },
 ];
 
