@@ -107,7 +107,7 @@ const SpreadTheWord = () => {
                 </>
               }
               // Custom classes to match the specific pink color and 3D shadow effect
-              className="!bg-[#F424B2] hover:!bg-[#d91a9b] shadow-[0_6px_0_#9e1773] hover:shadow-[0_4px_0_#9e1773] hover:translate-y-1 text-xl px-12 py-3 rounded-full"
+              className="!bg-[#F424B2] hover:!bg-[#d91a9b] shadow-[0_6px_0_#9e1773] hover:shadow-[0_4px_0_#9e1773] hover:translate-y-1 text-xl  px-10 md:px-20 py-3 rounded-full "
             />
           </ScrollMotion>
         </ScrollMotion>

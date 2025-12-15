@@ -89,7 +89,7 @@ const Volunteer = () => {
         <ScrollMotion delay={0.5}>
           <div className="flex justify-center">
             <Button
-              href="/volunteer"
+              href="https://www.giveffect.com/charities/27544-polk-county-bully-project/volunteer_application"
               label={
                 <>
                   <PawPrint className="w-6 h-6 mr-2 fill-current" />

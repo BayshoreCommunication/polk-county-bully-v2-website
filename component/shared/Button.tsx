@@ -18,7 +18,12 @@ const Button: React.FC<ButtonProps> = ({ label, href, className = "" }) => {
   const combinedClasses = `${baseStyles} ${className} text-center text-2xl`;
 
   return (
-    <Link href={href} className={combinedClasses}>
+    <Link
+      href={href}
+      className={combinedClasses}
+      target="_blank"
+      rel="noopener noreferrer"
+    >
       {label}
     </Link>
   );

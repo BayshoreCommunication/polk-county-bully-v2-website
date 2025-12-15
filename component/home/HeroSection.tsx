@@ -227,7 +227,7 @@ const HeroSection = () => {
         >
           <Button
             label="Donate"
-            href="/donate"
+            href="https://app.giveffect.com/charities/27544-polk-county-bully-project"
             className="w-full sm:w-auto min-w-[350px] sm:min-w-[350px] text-base sm:text-2xl shadow-[0_0_20px_rgba(244,71,195,0.4)] hover:shadow-[0_0_30px_rgba(244,71,195,0.6)] transition-all duration-300"
           />
         </motion.div>

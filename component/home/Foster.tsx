@@ -1,7 +1,7 @@
 import { PawPrint } from "lucide-react";
 import Image from "next/image";
 import ScrollMotion from "../motion/ScrollMotion"; // Adjust path if located in 'shared'
-import Button from "../shared/Button"; // Adjust path if located in 'shared'
+import Button from "../shared/Button";
 
 const Foster = () => {
   // Brand colors
@@ -89,15 +89,15 @@ const Foster = () => {
             {/* CTA Button */}
             <div className="flex justify-start">
               <Button
-                href="/foster"
+                href="https://petstablished.com/adoptions/personal-information?application_type=Foster&donation_section=false&form_id=24574&form_type=generic&generic_form_id=24574&pet_id=715879&section=1&selected_pets=false"
                 label={
                   <>
                     <PawPrint className="w-6 h-6 mr-2 fill-current" />
-                    Become A Foster Hero
+                    Become a Foster Hero
                   </>
                 }
                 // Pink background with 3D shadow style
-                className="!bg-[#F424B2] hover:!bg-[#d91a9b] shadow-[0_6px_0_#9e1773] hover:shadow-[0_4px_0_#9e1773] hover:translate-y-1 text-lg md:text-xl px-10 py-4 rounded-full min-w-[280px]"
+                className="!bg-[#F424B2] hover:!bg-[#d91a9b] shadow-[0_6px_0_#9e1773] hover:shadow-[0_4px_0_#9e1773] hover:translate-y-1 text-lg md:text-xl px-10 md:px-16 py-4 rounded-full min-w-[280px]"
               />
             </div>
           </ScrollMotion>

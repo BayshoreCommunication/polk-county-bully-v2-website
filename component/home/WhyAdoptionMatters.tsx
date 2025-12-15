@@ -2,7 +2,7 @@ import { Check } from "lucide-react";
 import Image from "next/image";
 import ScrollMotion from "../motion/ScrollMotion";
 
-// Data for the benefits list to keep JSX clean
+// Data for the benefits list
 const benefits = [
   {
     title: "Save a Life",
@@ -25,84 +25,42 @@ const benefits = [
 ];
 
 const WhyAdoptionMatters = () => {
-  // The gold color used in the design
   const goldColor = "#FFD700";
-  // Approximate dark blue background color from image
-  const darkBlueBg = "#003C5F";
 
   return (
     <div className="">
-      {" "}
       <section className="relative py-20 lg:py-28 overflow-hidden">
-        {/* Top gradient blur transition */}
-        <div className="absolute top-0 left-0 right-0 h-40 md:h-48 bg-linear-to-b from-black/70 via-black/40 to-transparent backdrop-blur-md z-5" />
+        {/* Top gradient blur */}
+        <div className="absolute top-0 left-0 right-0 h-40 md:h-48 bg-gradient-to-b from-black/70 via-black/40 to-transparent backdrop-blur-md z-5" />
 
-        {/* --- 1. Background Image Implementation --- */}
+        {/* --- Background Image --- */}
         <div className="absolute inset-0 -z-20">
           <Image
-            src="/assets/home/adoption-bg.svg" // Replace with your actual background image path
+            src="/assets/home/adoption-bg.svg"
             alt="Background Texture"
             fill
             className="object-cover object-center blur-[1px] brightness-[0.6]"
             quality={90}
           />
-          {/* Multi-colored gradient blur overlay */}
-          <div className="absolute inset-0 bg-linear-to-bl from-cyan-900/50 via-teal-800/50 to-amber-800/50 backdrop-blur-md opacity-60" />
-          {/* Additional radial gradient for depth */}
-          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,var(--tw-gradient-stops))] from-cyan-800/25 via-transparent to-transparent" />
-          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,var(--tw-gradient-stops))] from-amber-500/25 via-transparent to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-bl from-cyan-900/50 via-teal-800/50 to-amber-800/50 backdrop-blur-md opacity-60" />
         </div>
 
         <div className="container mx-auto px-6 md:px-12 relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
-            {/* --- Left Column: Complex Image Layering --- */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-20 items-center">
+            {/* --- Left Column: Images & Text --- */}
             <ScrollMotion className="relative">
-              {/* Container for the images. Adjust height as needed based on your actual images */}
-              <div className="relative h-[500px] w-full max-w-lg mx-auto lg:mx-0">
-                {/* Puppy Image (Bottom Layer - Absolute positioned) */}
-                <div className="absolute bottom-0 right-0 w-[65%] h-[60%] z-0 rounded-3xl overflow-hidden border-[3px] border-white/10 shadow-xl">
-                  <Image
-                    src="/assets/home/black-dog.svg" // Replace path
-                    alt="Rescue Puppy"
-                    fill
-                    className="object-cover"
-                  />
-                </div>
-
-                {/* Adult Dog Image (Top Layer - Relative positioned) */}
-                {/* Rounded corners calculation:
-                    rounded-tl-[100px] and rounded-br-[100px] create the distinct organic shape.
-                */}
-                <div className="relative z-10 w-[75%] h-[80%] rounded-tl-[100px] rounded-br-[100px] rounded-tr-3xl rounded-bl-3xl overflow-hidden border-4 border-[#FFD700]/30 shadow-2xl">
-                  <Image
-                    src="/assets/home/white-dog.svg" // Replace path
-                    alt="Adult rescue dog running"
-                    fill
-                    className="object-cover object-center"
-                  />
-                </div>
-
-                {/* Floating Text Block on bottom left */}
-                <div
-                  className="absolute -bottom-10 -left-4 md:-left-8 bg-[#09253a] p-6 rounded-xl shadow-[0_10px_30px_rgba(0,0,0,0.3)] z-20 max-w-xs border-l-4"
-                  style={{ borderColor: goldColor }}
-                >
-                  <h4
-                    className="font-bold mb-2 text-lg"
-                    style={{ color: goldColor }}
-                  >
-                    Trusted By Shelters And Families Across The Country
-                  </h4>
-                  <p className="text-gray-300 text-sm leading-relaxed">
-                    Building hope and lasting bonds through rescue, care, and
-                    compassion.
-                  </p>
-                </div>
+              <div className="relative w-full h-[300px] md:h-[400px] lg:h-[650px]">
+                <Image
+                  src="/assets/home/aboutdong.png"
+                  alt="Adult rescue dog"
+                  fill
+                  // object-cover ensures it fills the container without distorting
+                  className="object-cover object-center"
+                />
               </div>
             </ScrollMotion>
 
-            {/* --- Right Column: Text Content --- */}
-            {/* We add a slight delay (0.2s) so this side animates in just after the images */}
+            {/* --- Right Column: Content (Unchanged) --- */}
             <ScrollMotion delay={0.2}>
               <div>
                 <h2
@@ -131,10 +89,9 @@ const WhyAdoptionMatters = () => {
                   {benefits.map((item, index) => (
                     <ScrollMotion
                       key={index}
-                      // Stagger the list items slightly for a nice cascading effect
                       delay={0.3 + index * 0.1}
                       className="flex items-start gap-4"
-                      viewportOptions={{ margin: "0px 0px -50px 0px" }} // Trigger slightly earlier
+                      viewportOptions={{ margin: "0px 0px -50px 0px" }}
                     >
                       <div className="mt-1 bg-white/10 p-1 rounded-full shrink-0">
                         <Check
@@ -161,8 +118,8 @@ const WhyAdoptionMatters = () => {
           </div>
         </div>
 
-        {/* Bottom gradient blur transition */}
-        <div className="absolute bottom-0 left-0 right-0 h-40 md:h-48 bg-linear-to-b from-transparent via-[#003C5F]/30 to-[#003C5F]/80 backdrop-blur-md z-5" />
+        {/* Bottom gradient blur */}
+        <div className="absolute bottom-0 left-0 right-0 h-40 md:h-48 bg-gradient-to-b from-transparent via-[#003C5F]/30 to-[#003C5F]/80 backdrop-blur-md z-5" />
       </section>
     </div>
   );

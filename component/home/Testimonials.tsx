@@ -98,17 +98,17 @@ const Testimonials = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
           {testimonials.map((item, index) => (
             <ScrollMotion key={item.id} delay={index * 0.2} className="h-full">
-              <div className="bg-black/30 backdrop-blur-md rounded-[2.5rem] p-8 md:p-10 text-center shadow-2xl h-full flex flex-col items-center relative overflow-hidden group hover:-translate-y-2 transition-transform duration-300 border border-white/10">
+              <div className="bg-[#FFFFFF]/90 backdrop-blur-md rounded-[2.5rem] p-8 md:p-10 text-center shadow-2xl h-full flex flex-col items-center relative overflow-hidden group hover:-translate-y-2 transition-transform duration-300 border border-white/10">
                 {/* Watermark Pattern (Optional) */}
                 <div className="absolute inset-0 opacity-5 bg-[url('/assets/pattern.png')] bg-repeat z-0 pointer-events-none" />
                 {/* Avatar */}{" "}
                 <TestimonialAvatar src={item.image} name={item.name} />
                 {/* Name */}
-                <h3 className="text-2xl font-extrabold text-white mb-4 z-10">
+                <h3 className="text-2xl font-extrabold text-black mb-4 z-10">
                   {item.name}
                 </h3>
                 {/* Testimonial Text */}
-                <p className="text-gray-200 leading-relaxed font-medium z-10">
+                <p className="text-gray-800 leading-relaxed font-medium z-10">
                   {item.text}
                 </p>
               </div>
