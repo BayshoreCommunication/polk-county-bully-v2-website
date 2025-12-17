@@ -1,4 +1,3 @@
-import adoptionDog from "@/public/assets/adoption/adoption-process-dog.svg";
 import adoptionBg from "@/public/assets/home/adoption-bg.svg";
 import { PawPrint } from "lucide-react";
 import Image from "next/image";
@@ -51,7 +50,7 @@ const AdoptionProcess = () => {
             className="relative w-full aspect-video md:aspect-[16/9] rounded-3xl overflow-hidden shadow-2xl mb-12 border-4 border-white/10"
           >
             <Image
-              src={adoptionDog} // Replace with your image
+              src={"/assets/adoption/adoption-process-dog.jpeg"} // Replace with your image
               alt="Rescue dog on grass with van in background"
               fill
               className="object-cover"
@@ -68,10 +67,10 @@ const AdoptionProcess = () => {
             </h3>
 
             <p className="text-lg md:text-xl leading-relaxed text-gray-100/90 max-w-3xl mx-auto">
-              If you haven&apos;t fallen in love with one of our pit bulls yet, you
-              can see all of the dogs who are ready for a forever home here.
-              Once you&apos;ve chosen the dog you&apos;d like to adopt, you can submit
-              your application for adoption here!
+              If you haven&apos;t fallen in love with one of our pit bulls yet,
+              you can see all of the dogs who are ready for a forever home here.
+              Once you&apos;ve chosen the dog you&apos;d like to adopt, you can
+              submit your application for adoption here!
             </p>
 
             <p className="text-lg md:text-xl leading-relaxed text-gray-100/90 max-w-3xl mx-auto">
