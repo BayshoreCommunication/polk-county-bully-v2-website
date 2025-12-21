@@ -49,13 +49,14 @@ const WhyAdoptionMatters = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-20 items-center">
             {/* --- Left Column: Images & Text --- */}
             <ScrollMotion className="relative">
+              {/* The container determines the available space */}
               <div className="relative w-full h-[300px] md:h-[400px] lg:h-[650px]">
                 <Image
                   src="/assets/home/aboutdong.png"
                   alt="Adult rescue dog"
                   fill
-                  // object-cover ensures it fills the container without distorting
-                  className="object-cover object-center"
+                  // CHANGED: object-contain ensures the full image is shown
+                  className="object-contain object-center"
                 />
               </div>
             </ScrollMotion>
