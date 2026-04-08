@@ -96,7 +96,7 @@ const Events = () => {
       <div className="absolute bottom-0 left-0 right-0 h-40 bg-linear-to-t from-black/60 via-black/25 to-transparent z-0" />
       <div className="flex items-center mb-8 text-center mx-auto w-full max-w-7xl justify-center">
         <h1 className="text-4xl lg:text-6xl font-bold text-[#FFD700]">
-          See Our Event
+          See Our Events
         </h1>
       </div>
       <div className="container relative z-10 mx-auto px-4 md:px-8">

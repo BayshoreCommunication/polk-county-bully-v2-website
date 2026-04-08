@@ -85,7 +85,7 @@ const Merchandise = () => {
                   "2px 2px 0px #333, -1px -1px 0 #333, 1px -1px 0 #333, -1px 1px 0 #333, 1px 1px 0 #333",
               }}
             >
-              Support Our Pals by Purchasing Merchandise
+              Support Our Pals by Purchasing Our Merchandise
             </h2>
           </div>
         </ScrollMotion>

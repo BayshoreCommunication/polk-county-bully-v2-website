@@ -39,7 +39,7 @@ const SearchAvailableDogsEmbedded = () => {
                 "2px 2px 0px #333, -1px -1px 0 #333, 1px -1px 0 #333, -1px 1px 0 #333, 1px 1px 0 #333",
             }}
           >
-            Search Available Dogs
+            Explore Dogs Looking for Loving Homes
           </h2>
         </ScrollMotion>
         {/* --- Embedded Search Iframe --- */}
