@@ -1,4 +1,4 @@
-import CurrentEvents from "@/component/home/CurrentEvents";
+import Events from "@/component/home/Events";
 import Foster from "@/component/home/Foster";
 import HeroSection from "@/component/home/HeroSection";
 import Merchandise from "@/component/home/Merchandise";
@@ -29,13 +29,13 @@ export default function Home() {
   return (
     <div className="">
       <HeroSection />
+      <Events />
       <WhyAdoptionMatters />
       <SearchAvailableDogsEmbedded />
       <SponsorADog />
       <Merchandise />
       <Foster />
       <Volunteer />
-      <CurrentEvents />
       <Testimonials />
       <SpreadTheWord />
     </div>
