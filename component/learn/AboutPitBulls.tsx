@@ -36,7 +36,7 @@ const AboutPitBulls = () => {
               </h2>
 
               {/* Paragraph */}
-              <p className="text-gray-200 text-sm md:text-base text-center mb-8">
+              <p className="text-gray-200  text-lg md:text-xl text-center mb-8">
                 We love all bully breeds and especially Pit Bulls! We have seen
                 too many of them wind up in shelters or abandoned because they
                 have a bad rap. However, we know them for what they really are:
@@ -44,7 +44,7 @@ const AboutPitBulls = () => {
                 attention – just like every other dog!
               </p>
 
-              <p className="text-gray-200 text-sm md:text-base text-center mb-8">
+              <p className="text-gray-200  text-lg md:text-xl text-center mb-8">
                 Pit bulls often carry an undeserved reputation rooted in
                 misunderstanding and media exaggeration. These dogs were
                 originally bred for their strength and determination, traits
@@ -52,7 +52,7 @@ const AboutPitBulls = () => {
                 dogfighting.
               </p>
 
-              <p className="text-gray-200 text-sm md:text-base text-center mb-8">
+              <p className="text-gray-200 text-lg md:text-xl text-center mb-8">
                 When incidents involving neglected or poorly trained pit bulls
                 make headlines, the breed as a whole is unfairly judged, even
                 though the real issue often lies in how the dog was raised. In
@@ -60,19 +60,19 @@ const AboutPitBulls = () => {
                 than by breed alone.
               </p>
 
-              <p className="text-gray-200 text-sm md:text-base text-center mb-8">
+              <p className="text-gray-200 text-lg md:text-xl text-center mb-8">
                 Many pit bulls, when given proper care and love, prove to be
                 affectionate, loyal, and gentle companions.
               </p>
 
-              <p className="text-gray-200 text-sm md:text-base text-center mb-8">
+              <p className="text-gray-200 text-lg md:text-xl text-center mb-8">
                 Unfortunately, this unjust stigma has led to an
                 overrepresentation of pit bulls in shelters and laws that
                 unfairly target them, making it harder for these dogs to find
                 loving homes.
               </p>
 
-              <p className="text-gray-200 text-sm md:text-base text-center mb-8">
+              <p className="text-gray-200 text-lg md:text-xl text-center mb-8">
                 Despite the challenges they face, pit bulls make wonderful pets
                 and deserve a second chance. They are intelligent, devoted, and
                 playful animals that thrive in homes where they receive
@@ -81,7 +81,7 @@ const AboutPitBulls = () => {
                 children, pit bulls are well-suited to family life.
               </p>
 
-              <p className="text-gray-200 text-sm md:text-base text-center mb-8">
+              <p className="text-gray-200 text-lg md:text-xl text-center mb-8">
                 Adopting a pit bull does more than provide a home to a deserving
                 dog; it also helps to challenge the harmful stereotypes
                 surrounding the breed. For those who open their hearts to a pit
@@ -102,7 +102,7 @@ const AboutPitBulls = () => {
                   this breed and their stereotypes
                 </h2>
 
-                <div className="space-y-6">
+                <div className="space-y-6  text-lg md:text-xl">
                   {[
                     "Let’s start with the fact that Pit Bulls are not actually a breed of dog. The term refers to a variety of breeds of about 10 dogs, like the American Staffordshire terrier, Staffordshire bull terrier, bulldog, and other such mixes of dogs. It is a generic term often used to describe all dogs with similar traits and characteristics often known in general public as “Pit Bulls”. While there is an American Pit Bull Terrier breed, they only make up a very small percentage of dogs.",
                     "They were originally bred to drive and catch livestock and to serve as the ideal family companions.",
@@ -112,7 +112,10 @@ const AboutPitBulls = () => {
                     "As many as 75% of mixed breed dogs in animal shelters, including Pit Bulls and Pit Bull mixes, are misidentified as the wrong breed.",
                     "They are not inherently aggressive dogs. In fact, in temperance tests, Pit Bulls were the second most tolerant breed behind Golden Retrievers. The least tolerant was the Chihuahua.",
                   ].map((fact, index) => (
-                    <div key={index} className="flex gap-4 md:gap-6 items-start">
+                    <div
+                      key={index}
+                      className="flex gap-4 md:gap-6 items-start"
+                    >
                       {/* Serial Number */}
                       <div
                         className="flex-shrink-0 w-10 h-10 md:w-12 md:h-12 rounded-full flex items-center justify-center font-bold text-lg md:text-xl shadow-lg border-2 border-white/20"
@@ -124,7 +127,7 @@ const AboutPitBulls = () => {
                         {index + 1}
                       </div>
                       {/* Fact Text */}
-                      <p className="text-white/90 text-sm md:text-base leading-relaxed pt-1 text-left">
+                      <p className="text-white/90  text-lg md:text-xl leading-relaxed pt-1 text-left">
                         {fact}
                       </p>
                     </div>
@@ -143,14 +146,14 @@ const AboutPitBulls = () => {
               </h2>
 
               {/* Paragraph */}
-              <p className="text-gray-200 text-sm md:text-base text-center mb-8">
+              <p className="text-gray-200  text-lg md:text-xl text-center mb-8">
                 Pit Bulls are intelligent, agile, loving, faithful, and
                 extremely trainable. They love snuggling up to you to give you
                 tons of kisses, they will be your most faithful companion. Pits
                 put their all into whatever they start!
               </p>
 
-              <p className="text-gray-200 text-sm md:text-base text-center mb-8">
+              <p className="text-gray-200 text-lg md:text-xl text-center mb-8">
                 One of the most endearing traits of Pit Bulls is their love of
                 people and need for affection. They love cuddling, showering
                 kisses, and spending time with their people. A lot of Pit Bulls

@@ -192,7 +192,7 @@ const HeroSection = () => {
             </div>
 
             {/* Stat 2 */}
-            <div className="flex items-start gap-3 md:gap-4">
+            {/* <div className="flex items-start gap-3 md:gap-4">
               <div className="p-2.5 md:p-3 bg-white/10 rounded-xl md:rounded-2xl backdrop-blur-sm">
                 <Bone className="text-[#FACC15] w-5 h-5 md:w-6 md:h-6 fill-[#FACC15]" />
               </div>
@@ -207,7 +207,7 @@ const HeroSection = () => {
                   Partner Shelters
                 </span>
               </div>
-            </div>
+            </div> */}
           </div>
         </motion.div>
 

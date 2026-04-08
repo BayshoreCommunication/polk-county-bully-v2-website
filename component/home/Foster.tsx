@@ -44,7 +44,7 @@ const Foster = () => {
             </div>
 
             {/* 2. Secondary Square Image (Top Right) */}
-            <div className="absolute right-0 top-0 w-[45%] aspect-square border-[4px] border-white shadow-xl z-0">
+            <div className="absolute right-0 top-0 w-[45%] aspect-square border-[4px] border-white shadow-xl z-20">
               <Image
                 src="/assets/home/foster-left-image.svg" // Replace with small dog image
                 alt="Foster puppy"
@@ -54,16 +54,13 @@ const Foster = () => {
             </div>
 
             {/* 3. Blue Stat Box (Bottom Right) */}
-            <div
-              className="absolute right-0 bottom-12 w-[45%] aspect-square flex flex-col justify-center items-center text-center p-2 border-[4px] border-white shadow-xl z-20"
-              style={{ backgroundColor: blueBoxColor }}
-            >
-              <span className="text-3xl md:text-4xl font-extrabold text-white leading-none mb-1">
-                5000+
-              </span>
-              <span className="text-white text-sm md:text-base font-medium">
-                Saves Lives
-              </span>
+            <div className="absolute right-0 bottom-12 w-[45%] aspect-square flex flex-col justify-center items-center text-center p-2 border-[4px] border-white shadow-xl z-20">
+              <Image
+                src="/assets/home/black-dog.svg" // Replace with small dog image
+                alt="Foster puppy"
+                fill
+                className="object-cover"
+              />
             </div>
           </ScrollMotion>
 

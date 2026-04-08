@@ -86,8 +86,9 @@ const PolkcountryBullys = () => {
               that works to find forever homes for this misunderstood breed.
               Through local adoption and rescue partnerships we are giving these
               dogs their chance at a happily ever after. We’re dedicated to our
-              goal of reducing euthanasia rates of these dogs in Polk County. We
-              pulled half of the dogs pulled in the county by rescues in 2022.
+              goal of reducing euthanasia rates of these dogs in Polk County.We
+              consistently pull more dogs from our local shelter than any other
+              approved rescue partner.
             </p>
           </ScrollMotion>
         </div>

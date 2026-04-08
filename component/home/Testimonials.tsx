@@ -3,36 +3,67 @@
 import Image from "next/image";
 import { useState } from "react";
 import ScrollMotion from "../motion/ScrollMotion";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay, Pagination } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/pagination";
 
-// Define the common avatar path here so it's easy to change later
 const COMMON_AVATAR = "/assets/home/avatar.png";
+
+type TestimonialAvatarProps = {
+  src?: string;
+  name: string;
+};
 
 const testimonials = [
   {
     id: 1,
     name: "Charlie Smith",
-    image: COMMON_AVATAR, // Using common avatar
+    image: COMMON_AVATAR,
     text: "Adopting through Bully Project Rescue was seamless and heartwarming. Our new pup feels like part of the family already!",
   },
   {
     id: 2,
     name: "Dany Monson",
-    image: COMMON_AVATAR, // Using common avatar
+    image: COMMON_AVATAR,
     text: "The team was so supportive and caring. They matched us with the perfect dog, and the entire process felt personal and safe.",
   },
   {
     id: 3,
     name: "Sacha Dubois",
-    image: COMMON_AVATAR, // Using common avatar
-    text: "Fostering with Bully Project Rescue was a life-changing experience. I got to help dogs in need while preparing them for their forever homes.",
+    image: COMMON_AVATAR,
+    text: "Fostering with Bully Project Rescue was a life-changing experience.",
+  },
+  {
+    id: 4,
+    name: "Todd VanMeter",
+    image: COMMON_AVATAR,
+    text: "Please come and donate your time walking the dogs or taking them out for a doggy day out. These dogs sound way too much time cooped up. We walked nd played with about 10 dogs. Towels bedding food donations are always appreciated.",
+  },
+  {
+    id: 5,
+    name: "Juan Yglesias",
+    image: COMMON_AVATAR,
+    text: "Very disappointed. Showed up at 6:08 this evening. It says they are open until 7pm. They wouldn't even let us in to look at the animals. She said there was a 3 day application process. I'm ok with that but you won't even let me in so I can take a look at at some of the dogs you have? How many dogs missed out on adoption due to the service I just received? That's a shame.",
+  },
+  {
+    id: 5,
+    name: "Trish Carter",
+    image: COMMON_AVATAR,
+    text: "I never knew anything about the Bully Peoject until I saw their facebook posts...I found my little Miro and adopted him from the Bully Project two weeks ago. The ladies working there were awesome and seemed to really care about the 4 legged little babies. Please help them. Donate and help this team keep helping the babies!!!",
+  },
+  {
+    id: 5,
+    name: "Fred Ramone",
+    image: COMMON_AVATAR,
+    text: "They are the best, and work so dang hard for these fur babies!!! They save beautiful animals that were failed by their human. How can you not love faces like him.",
   },
 ];
 
 const Testimonials = () => {
   const goldColor = "#FFD700";
 
-  // --- Sub-Component for Image Handling ---
-  const TestimonialAvatar = ({ src, name }: { src: string; name: string }) => {
+  const TestimonialAvatar = ({ src, name }: TestimonialAvatarProps) => {
     const [hasError, setHasError] = useState(false);
 
     return (
@@ -43,10 +74,9 @@ const Testimonials = () => {
             alt={name}
             fill
             className="object-cover"
-            onError={() => setHasError(true)} // Trigger fallback on load error
+            onError={() => setHasError(true)}
           />
         ) : (
-          // Fallback UI: First Letter of Name
           <div className="w-full h-full flex items-center justify-center bg-[#FFD700] text-black">
             <span className="text-4xl font-extrabold uppercase font-serif">
               {name.charAt(0)}
@@ -59,26 +89,19 @@ const Testimonials = () => {
 
   return (
     <section className="relative py-24 overflow-hidden">
-      {/* Top gradient blur transition */}
-      <div className="absolute top-0 left-0 right-0 h-40 md:h-48 bg-linear-to-b from-[#1F7A8C]/80 via-[#1F7A8C]/40 to-transparent z-5" />
-
-      {/* --- Background Image --- */}
+      {/* Background */}
       <div className="absolute inset-0 -z-20">
         <Image
           src="/assets/home/testimonial-bg.svg"
-          alt="Colorful graffiti art background"
+          alt="bg"
           fill
-          className="object-cover object-center blur-[1px] brightness-[0.6]"
+          className="object-cover blur-[1px] brightness-[0.6]"
         />
-        {/* Multi-colored gradient blur overlay */}
         <div className="absolute inset-0 bg-linear-to-bl from-cyan-900/50 via-teal-800/50 to-amber-800/50 backdrop-blur-md opacity-60" />
-        {/* Additional radial gradient for depth */}
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,var(--tw-gradient-stops))] from-cyan-800/25 via-transparent to-transparent" />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,var(--tw-gradient-stops))] from-amber-500/25 via-transparent to-transparent" />
       </div>
 
       <div className="container mx-auto px-4 md:px-8 relative z-20">
-        {/* --- Header Section --- */}
+        {/* Header */}
         <ScrollMotion className="text-center mb-16">
           <h2
             className="text-4xl md:text-6xl font-extrabold font-serif tracking-wide mb-4"
@@ -89,36 +112,42 @@ const Testimonials = () => {
           >
             Our Client Testimonial
           </h2>
-          <p className="text-white text-lg md:text-xl font-medium tracking-wide drop-shadow-md">
-            Hear from families who&apos;ve found their perfect furry companions.
+          <p className="text-white text-lg md:text-xl font-medium tracking-wide">
+            Hear from families who&apos;ve found their perfect companions.
           </p>
         </ScrollMotion>
 
-        {/* --- Testimonial Cards Grid --- */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        {/* Swiper Slider (Same UI Cards) */}
+        <Swiper
+          modules={[Autoplay]}
+          spaceBetween={30}
+          autoplay={{ delay: 3000 }}
+          pagination={{ clickable: true }}
+          breakpoints={{
+            0: { slidesPerView: 1 },
+            768: { slidesPerView: 2 },
+            1024: { slidesPerView: 3 },
+          }}
+        >
           {testimonials.map((item, index) => (
-            <ScrollMotion key={item.id} delay={index * 0.2} className="h-full">
-              <div className="bg-[#FFFFFF]/90 backdrop-blur-md rounded-[2.5rem] p-8 md:p-10 text-center shadow-2xl h-full flex flex-col items-center relative overflow-hidden group hover:-translate-y-2 transition-transform duration-300 border border-white/10">
-                {/* Watermark Pattern (Optional) */}
-                <div className="absolute inset-0 opacity-5 bg-[url('/assets/pattern.png')] bg-repeat z-0 pointer-events-none" />
-                {/* Avatar */}{" "}
-                <TestimonialAvatar src={item.image} name={item.name} />
-                {/* Name */}
-                <h3 className="text-2xl font-extrabold text-black mb-4 z-10">
-                  {item.name}
-                </h3>
-                {/* Testimonial Text */}
-                <p className="text-gray-800 leading-relaxed font-medium z-10">
-                  {item.text}
-                </p>
-              </div>
-            </ScrollMotion>
-          ))}
-        </div>
-      </div>
+            <SwiperSlide key={item.id}>
+              <ScrollMotion delay={index * 0.2} className="h-full">
+                <div className="bg-[#FFFFFF]/90 backdrop-blur-md rounded-[2.5rem] p-8 md:p-10 text-center shadow-2xl h-full flex flex-col items-center relative overflow-hidden group hover:-translate-y-2 transition-transform duration-300 border border-white/10">
+                  <TestimonialAvatar src={item.image} name={item.name} />
 
-      {/* Bottom gradient blur transition */}
-      <div className="absolute bottom-0 left-0 right-0 h-40 md:h-48 bg-linear-to-b from-transparent via-black/25 to-black z-5" />
+                  <h3 className="text-2xl font-extrabold text-black mb-4 z-10">
+                    {item.name}
+                  </h3>
+
+                  <p className="text-gray-800 leading-relaxed font-medium z-10">
+                    {item.text}
+                  </p>
+                </div>
+              </ScrollMotion>
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      </div>
     </section>
   );
 };

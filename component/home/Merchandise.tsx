@@ -85,7 +85,7 @@ const Merchandise = () => {
                   "2px 2px 0px #333, -1px -1px 0 #333, 1px -1px 0 #333, -1px 1px 0 #333, 1px 1px 0 #333",
               }}
             >
-              Buy Our Merchandise
+              Support Our Pals by Purchasing Merchandise
             </h2>
           </div>
         </ScrollMotion>
@@ -137,7 +137,7 @@ const Merchandise = () => {
                 className="text-3xl md:text-4xl font-extrabold font-serif mb-3"
                 style={{ color: "#005B70" }}
               >
-                Get Your Gear
+                Rock Our Rescue Gear
               </h2>
               <p className="text-gray-600 text-base md:text-lg max-w-lg mx-auto leading-relaxed">
                 Wear your heart on your sleeve. Every purchase helps rescue more

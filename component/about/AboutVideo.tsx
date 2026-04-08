@@ -59,7 +59,7 @@ const AboutVideo = () => {
           setInView(true);
         }
       },
-      { threshold: 0.2 }
+      { threshold: 0.2 },
     );
 
     if (sectionRef.current) {
@@ -108,53 +108,52 @@ const AboutVideo = () => {
         </ScrollMotion>
 
         {/* --- 2. Stats Section (Pink Background) --- */}
-        <ScrollMotion delay={0.2}>
-          <div
-            id="counter-section"
-            ref={sectionRef}
-            // Updated: Solid Pink Gradient Background to match image
-            className="grid grid-cols-1 sm:grid-cols-3 gap-8 text-center bg-gradient-to-r from-fuchsia-500 to-pink-500 py-12 px-8 max-w-4xl w-full mx-auto rounded-t-3xl sm:rounded-3xl shadow-xl relative z-0 transform translate-y-4"
-          >
-            {/* Counter 1 */}
-            <div className="flex flex-col items-center justify-center text-white">
-              <h3 className="text-4xl md:text-6xl font-serif font-medium mb-2 drop-shadow-sm">
-                {inView ? <SimpleCountUp end={26} duration={3} /> : "0"}k
-                <sup className="text-2xl md:text-4xl">+</sup>
-              </h3>
-              <p className="text-white/90 text-lg font-medium tracking-wide">
-                Dog Adopted
-              </p>
+        {/* <ScrollMotion delay={0.2}>
+            <div
+              id="counter-section"
+              ref={sectionRef}
+              className="grid grid-cols-1 sm:grid-cols-3 gap-8 text-center bg-gradient-to-r from-fuchsia-500 to-pink-500 py-12 px-8 max-w-4xl w-full mx-auto rounded-t-3xl sm:rounded-3xl shadow-xl relative z-0 transform translate-y-4"
+            >
+              
+              <div className="flex flex-col items-center justify-center text-white">
+                <h3 className="text-4xl md:text-6xl font-serif font-medium mb-2 drop-shadow-sm">
+                  {inView ? <SimpleCountUp end={26} duration={3} /> : "0"}k
+                  <sup className="text-2xl md:text-4xl">+</sup>
+                </h3>
+                <p className="text-white/90 text-lg font-medium tracking-wide">
+                  Dog Adopted
+                </p>
+              </div>
+
+              
+              <div className="hidden sm:block w-[1px] h-16 bg-white/40 mx-auto self-center"></div>
+
+              
+              <div className="flex flex-col items-center justify-center text-white">
+                <h3 className="text-4xl md:text-6xl font-serif font-medium mb-2 drop-shadow-sm">
+                  {inView ? <SimpleCountUp end={15} duration={3} /> : "0"}k
+                  <sup className="text-2xl md:text-4xl">+</sup>
+                </h3>
+                <p className="text-white/90 text-lg font-medium tracking-wide">
+                  Shelters & Recues
+                </p>
+              </div>
+
+              
+              <div className="hidden sm:block w-[1px] h-16 bg-white/40 mx-auto self-center"></div>
+
+              
+              <div className="flex flex-col items-center justify-center text-white">
+                <h3 className="text-4xl md:text-6xl font-serif font-medium mb-2 drop-shadow-sm">
+                  {inView ? <SimpleCountUp end={18} duration={3} /> : "0"}
+                  <sup className="text-2xl md:text-4xl">+</sup>
+                </h3>
+                <p className="text-white/90 text-lg font-medium tracking-wide">
+                  Years of Impact
+                </p>
+              </div>
             </div>
-
-            {/* Divider */}
-            <div className="hidden sm:block w-[1px] h-16 bg-white/40 mx-auto self-center"></div>
-
-            {/* Counter 2 */}
-            <div className="flex flex-col items-center justify-center text-white">
-              <h3 className="text-4xl md:text-6xl font-serif font-medium mb-2 drop-shadow-sm">
-                {inView ? <SimpleCountUp end={15} duration={3} /> : "0"}k
-                <sup className="text-2xl md:text-4xl">+</sup>
-              </h3>
-              <p className="text-white/90 text-lg font-medium tracking-wide">
-                Shelters & Recues
-              </p>
-            </div>
-
-            {/* Divider */}
-            <div className="hidden sm:block w-[1px] h-16 bg-white/40 mx-auto self-center"></div>
-
-            {/* Counter 3 */}
-            <div className="flex flex-col items-center justify-center text-white">
-              <h3 className="text-4xl md:text-6xl font-serif font-medium mb-2 drop-shadow-sm">
-                {inView ? <SimpleCountUp end={18} duration={3} /> : "0"}
-                <sup className="text-2xl md:text-4xl">+</sup>
-              </h3>
-              <p className="text-white/90 text-lg font-medium tracking-wide">
-                Years of Impact
-              </p>
-            </div>
-          </div>
-        </ScrollMotion>
+          </ScrollMotion> */}
 
         {/* --- 3. Video Section --- */}
         <ScrollMotion

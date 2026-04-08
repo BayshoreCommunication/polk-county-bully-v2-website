@@ -84,7 +84,7 @@ const AdoptionProcess = () => {
             {/* --- 3. CTA Button --- */}
             <div className="pt-8 flex justify-center">
               <Button
-                href="/adopt"
+                href="https://petstablished.com/adoptions/personal-information?application_type=Foster&donation_section=false&form_id=24574&form_type=generic&generic_form_id=24574&pet_id=715879&section=1&selected_pets=false"
                 label={
                   <>
                     <PawPrint className="w-6 h-6 mr-2 fill-current" />
