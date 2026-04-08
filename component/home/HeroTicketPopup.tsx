@@ -199,13 +199,6 @@ const HeroTicketPopup = ({ startTimer }: { startTimer: boolean }) => {
             >
               Reserve your spot at the next rescue event
             </h3>
-            <p className="mb-8 max-w-md text-base leading-7 text-white/80">
-              Full site analysis kore ei popup-ta hero area-r visual language-e
-              banano holo: dark layered background, gold headings, glass panel,
-              and pink action accents. It appears once five seconds after the
-              hero animation finishes so the main landing experience still gets
-              room to breathe.
-            </p>
 
             <div className="space-y-4">
               <div className="flex items-start gap-3 rounded-2xl border border-white/10 bg-white/8 p-4">
