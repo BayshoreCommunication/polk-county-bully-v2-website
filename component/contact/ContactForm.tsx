@@ -57,9 +57,9 @@ export default function ContactForm() {
     if (Object.keys(errors).length === 0) {
       send(
         "service_78ezzng", // Your EmailJS service ID
-        "template_jd79ph8", // Your EmailJS template ID
+        "template_4hmmh5l", // Your EmailJS template ID
         formState,
-        "FAcMdTK-cDe5gXZaD" // Your EmailJS public key
+        "FAcMdTK-cDe5gXZaD", // Your EmailJS public key
       )
         .then(() => {
           setLoading(false);

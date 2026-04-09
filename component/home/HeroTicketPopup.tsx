@@ -186,7 +186,7 @@ const HeroTicketPopup = ({ startTimer }: { startTimer: boolean }) => {
     try {
       await send(
         "service_78ezzng",
-        "template_jd79ph8",
+        "template_gvqi22j",
         emailPayload,
         "FAcMdTK-cDe5gXZaD",
       );
@@ -279,7 +279,9 @@ const HeroTicketPopup = ({ startTimer }: { startTimer: boolean }) => {
                     <Users className="h-5 w-5 text-[#FFD700]" />
                   </div>
                   <div>
-                    <p className="font-bold text-white">Matches site behavior</p>
+                    <p className="font-bold text-white">
+                      Matches site behavior
+                    </p>
                     <p className="text-sm leading-5 text-white/70 sm:leading-6">
                       Uses the same email flow and modal treatment already
                       present in the project.
