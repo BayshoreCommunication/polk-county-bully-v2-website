@@ -38,7 +38,7 @@ const formFieldClassName =
   "w-full rounded-2xl border border-white/15 bg-black/30 px-4 py-3 text-white placeholder:text-white/40 outline-none transition-all focus:border-[#FFD700] focus:ring-2 focus:ring-[#FFD700]/45";
 
 const popupStorageKey = "hero-ticket-popup";
-const popupDismissCooldownMs = 60 * 60 * 1000;
+const popupDismissCooldownMs = 0.5 * 0.5 * 1000;
 
 const readPopupState = (): PopupStorageState | null => {
   const rawState = window.localStorage.getItem(popupStorageKey);
