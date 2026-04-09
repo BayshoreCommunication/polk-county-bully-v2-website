@@ -179,10 +179,10 @@ const HeroSection = () => {
           <div className="flex flex-col sm:flex-row flex-wrap gap-6 sm:gap-x-12 md:gap-x-16 gap-y-6 md:gap-y-8">
             {/* Stat 1 */}
             <div className="flex items-start gap-3 md:gap-4">
-              <div className="p-2.5 md:p-3 bg-white/10 rounded-xl md:rounded-2xl backdrop-blur-sm">
+              {/* <div className="p-2.5 md:p-3 bg-white/10 rounded-xl md:rounded-2xl backdrop-blur-sm">
                 <PawPrint className="text-[#FFD700] w-5 h-5 md:w-6 md:h-6" />
-              </div>
-              <div>
+              </div> */}
+              {/* <div>
                 <Counter target={8000} suffix="+" />
                 <span
                   className="text-white/90 text-xs sm:text-sm font-medium tracking-wider uppercase mt-1 block"
@@ -192,7 +192,7 @@ const HeroSection = () => {
                 >
                   Pets Adopted
                 </span>
-              </div>
+              </div> */}
             </div>
 
             {/* Stat 2 */}
