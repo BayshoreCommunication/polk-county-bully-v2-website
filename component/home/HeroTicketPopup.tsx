@@ -18,6 +18,11 @@ type TicketFormState = {
 
 type TicketFormErrors = Partial<Record<keyof TicketFormState, string>>;
 
+type PopupStorageState = {
+  status: "dismissed" | "submitted";
+  expiresAt?: number;
+};
+
 const initialFormState: TicketFormState = {
   firstname: "",
   lastname: "",
@@ -33,6 +38,48 @@ const formFieldClassName =
   "w-full rounded-2xl border border-white/15 bg-black/30 px-4 py-3 text-white placeholder:text-white/40 outline-none transition-all focus:border-[#FFD700] focus:ring-2 focus:ring-[#FFD700]/45";
 
 const popupStorageKey = "hero-ticket-popup";
+const popupDismissCooldownMs = 60 * 60 * 1000;
+
+const readPopupState = (): PopupStorageState | null => {
+  const rawState = window.localStorage.getItem(popupStorageKey);
+
+  if (!rawState) {
+    return null;
+  }
+
+  try {
+    const parsed = JSON.parse(rawState) as PopupStorageState;
+
+    if (parsed.status === "submitted") {
+      return parsed;
+    }
+
+    if (
+      parsed.status === "dismissed" &&
+      typeof parsed.expiresAt === "number" &&
+      parsed.expiresAt > Date.now()
+    ) {
+      return parsed;
+    }
+  } catch (error) {
+    console.error("Failed to parse popup storage state:", error);
+  }
+
+  window.localStorage.removeItem(popupStorageKey);
+  return null;
+};
+
+const persistPopupState = (status: PopupStorageState["status"]) => {
+  const popupState: PopupStorageState =
+    status === "dismissed"
+      ? {
+          status,
+          expiresAt: Date.now() + popupDismissCooldownMs,
+        }
+      : { status };
+
+  window.localStorage.setItem(popupStorageKey, JSON.stringify(popupState));
+};
 
 const HeroTicketPopup = ({ startTimer }: { startTimer: boolean }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -46,11 +93,9 @@ const HeroTicketPopup = ({ startTimer }: { startTimer: boolean }) => {
     }
 
     const hasSeenPopup =
-      process.env.NODE_ENV === "development"
-        ? null
-        : window.sessionStorage.getItem(popupStorageKey);
+      process.env.NODE_ENV === "development" ? null : readPopupState();
 
-    if (hasSeenPopup === "dismissed" || hasSeenPopup === "submitted") {
+    if (hasSeenPopup) {
       return;
     }
 
@@ -76,7 +121,7 @@ const HeroTicketPopup = ({ startTimer }: { startTimer: boolean }) => {
   }, [isOpen]);
 
   const closePopup = () => {
-    window.sessionStorage.setItem(popupStorageKey, "dismissed");
+    persistPopupState("dismissed");
     setIsOpen(false);
   };
 
@@ -146,7 +191,7 @@ const HeroTicketPopup = ({ startTimer }: { startTimer: boolean }) => {
         "FAcMdTK-cDe5gXZaD",
       );
 
-      window.sessionStorage.setItem(popupStorageKey, "submitted");
+      persistPopupState("submitted");
       setIsOpen(false);
       setFormState(initialFormState);
       setFormErrors({});
