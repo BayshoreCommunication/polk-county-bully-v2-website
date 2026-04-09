@@ -1,5 +1,6 @@
 "use client";
 
+import { send } from "@emailjs/browser";
 import mugMockup from "@/public/assets/home/12mug_mockup 1.svg";
 import maskGroup from "@/public/assets/home/Mask group.svg";
 import bullyBottle from "@/public/assets/home/bully_bottle 1.svg";
@@ -10,6 +11,7 @@ import backpackGirl from "@/public/assets/home/young-girl-with-gray-student-back
 import { PawPrint, X } from "lucide-react";
 import Image, { StaticImageData } from "next/image";
 import { useEffect, useState } from "react";
+import Swal from "sweetalert2";
 import ScrollMotion from "../motion/ScrollMotion";
 
 // Define product data
@@ -22,6 +24,28 @@ const products = [
   { id: 6, src: bullyCap, alt: "Bully Project T-Shirt Grey" },
   { id: 7, src: backpackGirl, alt: "Bully Project Cap" },
 ];
+
+type MerchandiseFormState = {
+  fullName: string;
+  email: string;
+  phone: string;
+  itemType: string;
+  size: string;
+  quantity: string;
+  shippingAddress: string;
+};
+
+type MerchandiseFormErrors = Partial<Record<keyof MerchandiseFormState, string>>;
+
+const initialFormState: MerchandiseFormState = {
+  fullName: "",
+  email: "",
+  phone: "",
+  itemType: "",
+  size: "",
+  quantity: "1",
+  shippingAddress: "",
+};
 
 const MerchandiseItem = ({
   src,
@@ -54,6 +78,10 @@ const MerchandiseItem = ({
 const Merchandise = () => {
   const goldColor = "#FFD700";
   const [openModal, setOpenModal] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [formState, setFormState] =
+    useState<MerchandiseFormState>(initialFormState);
+  const [formErrors, setFormErrors] = useState<MerchandiseFormErrors>({});
 
   // Disable background scrolling when modal is open
   useEffect(() => {
@@ -67,6 +95,107 @@ const Merchandise = () => {
       document.body.style.overflow = originalStyle;
     };
   }, [openModal]);
+
+  const validate = (values: MerchandiseFormState): MerchandiseFormErrors => {
+    const errors: MerchandiseFormErrors = {};
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i;
+    const quantity = Number(values.quantity);
+
+    if (!values.fullName.trim()) errors.fullName = "Name is required.";
+    if (!values.email.trim()) errors.email = "Email is required.";
+    else if (!emailRegex.test(values.email)) {
+      errors.email = "Enter a valid email address.";
+    }
+    if (!values.phone.trim()) errors.phone = "Phone number is required.";
+    if (!values.itemType.trim()) errors.itemType = "Select an item.";
+    if (!values.quantity.trim()) errors.quantity = "Quantity is required.";
+    else if (!Number.isInteger(quantity) || quantity < 1) {
+      errors.quantity = "Quantity must be at least 1.";
+    }
+    if (!values.shippingAddress.trim()) {
+      errors.shippingAddress = "Shipping address is required.";
+    }
+
+    return errors;
+  };
+
+  const handleChange =
+    (field: keyof MerchandiseFormState) =>
+    (
+      e: React.ChangeEvent<
+        HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement
+      >,
+    ) => {
+      setFormState((prev) => ({ ...prev, [field]: e.target.value }));
+      setFormErrors((prev) => ({ ...prev, [field]: undefined }));
+    };
+
+  const closeModal = () => {
+    if (loading) {
+      return;
+    }
+    setOpenModal(false);
+  };
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    const errors = validate(formState);
+    setFormErrors(errors);
+
+    if (Object.keys(errors).length > 0) {
+      return;
+    }
+
+    const [firstname = "", ...lastnameParts] = formState.fullName
+      .trim()
+      .split(/\s+/);
+
+    const emailPayload = {
+      firstname,
+      lastname: lastnameParts.join(" ") || "-",
+      email: formState.email,
+      phone: formState.phone,
+      message: [
+        "New merchandise order request",
+        `Full Name: ${formState.fullName}`,
+        `Item Type: ${formState.itemType}`,
+        `Size: ${formState.size || "Not specified"}`,
+        `Quantity: ${formState.quantity}`,
+        `Shipping Address: ${formState.shippingAddress}`,
+      ].join("\n"),
+    };
+
+    setLoading(true);
+
+    try {
+      await send(
+        "service_78ezzng",
+        "template_jd79ph8",
+        emailPayload,
+        "FAcMdTK-cDe5gXZaD",
+      );
+
+      setFormState(initialFormState);
+      setFormErrors({});
+      setOpenModal(false);
+
+      await Swal.fire({
+        icon: "success",
+        text: "Your merchandise request has been submitted. The rescue team will contact you shortly with the next steps.",
+        confirmButtonColor: "#131b2a",
+      });
+    } catch (error) {
+      console.error("Merchandise order request failed:", error);
+      await Swal.fire({
+        icon: "error",
+        text: "Something went wrong while sending your order request. Please try again.",
+        confirmButtonColor: "#131b2a",
+      });
+    } finally {
+      setLoading(false);
+    }
+  };
 
   return (
     <section className="relative py-20 bg-[#005B70] overflow-hidden">
@@ -125,7 +254,7 @@ const Merchandise = () => {
           <div className="bg-white rounded-3xl shadow-2xl max-w-3xl w-full p-6 md:p-10 relative animate-fadeIn max-h-[90vh] overflow-y-auto border-4 border-[#FFD700]">
             {/* Close Button */}
             <button
-              onClick={() => setOpenModal(false)}
+              onClick={closeModal}
               className="absolute top-4 right-4 text-gray-400 hover:text-[#F424B2] hover:bg-pink-50 rounded-full p-2 transition-colors"
             >
               <X className="w-8 h-8" />
@@ -146,16 +275,26 @@ const Merchandise = () => {
             </div>
 
             {/* FORM */}
-            <form className="grid grid-cols-1 md:grid-cols-2 gap-5">
+            <form
+              className="grid grid-cols-1 md:grid-cols-2 gap-5"
+              onSubmit={handleSubmit}
+            >
               <div className="space-y-1">
                 <label className="text-sm font-bold text-gray-700 ml-1">
                   Name
                 </label>
                 <input
                   type="text"
+                  value={formState.fullName}
+                  onChange={handleChange("fullName")}
                   placeholder="Your full name"
                   className="w-full bg-gray-50 border border-gray-200 p-3 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#F424B2] focus:border-transparent transition-all"
                 />
+                {formErrors.fullName && (
+                  <p className="text-sm text-red-500 ml-1">
+                    {formErrors.fullName}
+                  </p>
+                )}
               </div>
 
               <div className="space-y-1">
@@ -164,9 +303,16 @@ const Merchandise = () => {
                 </label>
                 <input
                   type="email"
+                  value={formState.email}
+                  onChange={handleChange("email")}
                   placeholder="example@email.com"
                   className="w-full bg-gray-50 border border-gray-200 p-3 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#F424B2] focus:border-transparent transition-all"
                 />
+                {formErrors.email && (
+                  <p className="text-sm text-red-500 ml-1">
+                    {formErrors.email}
+                  </p>
+                )}
               </div>
 
               <div className="space-y-1">
@@ -175,35 +321,55 @@ const Merchandise = () => {
                 </label>
                 <input
                   type="tel"
+                  value={formState.phone}
+                  onChange={handleChange("phone")}
                   placeholder="(123) 456-7890"
                   className="w-full bg-gray-50 border border-gray-200 p-3 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#F424B2] focus:border-transparent transition-all"
                 />
+                {formErrors.phone && (
+                  <p className="text-sm text-red-500 ml-1">
+                    {formErrors.phone}
+                  </p>
+                )}
               </div>
 
               <div className="space-y-1">
                 <label className="text-sm font-bold text-gray-700 ml-1">
                   Item Type
                 </label>
-                <select className="w-full bg-gray-50 border border-gray-200 p-3 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#F424B2] focus:border-transparent transition-all text-gray-600">
-                  <option>Select Merchandise</option>
-                  <option>T-Shirt</option>
-                  <option>Mug</option>
-                  <option>Tote Bag</option>
-                  <option>Cap</option>
-                  <option>Bottle</option>
+                <select
+                  value={formState.itemType}
+                  onChange={handleChange("itemType")}
+                  className="w-full bg-gray-50 border border-gray-200 p-3 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#F424B2] focus:border-transparent transition-all text-gray-600"
+                >
+                  <option value="">Select Merchandise</option>
+                  <option value="T-Shirt">T-Shirt</option>
+                  <option value="Mug">Mug</option>
+                  <option value="Tote Bag">Tote Bag</option>
+                  <option value="Cap">Cap</option>
+                  <option value="Bottle">Bottle</option>
                 </select>
+                {formErrors.itemType && (
+                  <p className="text-sm text-red-500 ml-1">
+                    {formErrors.itemType}
+                  </p>
+                )}
               </div>
 
               <div className="space-y-1">
                 <label className="text-sm font-bold text-gray-700 ml-1">
                   Size
                 </label>
-                <select className="w-full bg-gray-50 border border-gray-200 p-3 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#F424B2] focus:border-transparent transition-all text-gray-600">
-                  <option>Size (If Applicable)</option>
-                  <option>Small</option>
-                  <option>Medium</option>
-                  <option>Large</option>
-                  <option>XL</option>
+                <select
+                  value={formState.size}
+                  onChange={handleChange("size")}
+                  className="w-full bg-gray-50 border border-gray-200 p-3 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#F424B2] focus:border-transparent transition-all text-gray-600"
+                >
+                  <option value="">Size (If Applicable)</option>
+                  <option value="Small">Small</option>
+                  <option value="Medium">Medium</option>
+                  <option value="Large">Large</option>
+                  <option value="XL">XL</option>
                 </select>
               </div>
 
@@ -213,10 +379,16 @@ const Merchandise = () => {
                 </label>
                 <input
                   type="number"
-                  defaultValue={1}
+                  value={formState.quantity}
+                  onChange={handleChange("quantity")}
                   min={1}
                   className="w-full bg-gray-50 border border-gray-200 p-3 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#F424B2] focus:border-transparent transition-all"
                 />
+                {formErrors.quantity && (
+                  <p className="text-sm text-red-500 ml-1">
+                    {formErrors.quantity}
+                  </p>
+                )}
               </div>
 
               <div className="md:col-span-2 space-y-1">
@@ -224,19 +396,29 @@ const Merchandise = () => {
                   Shipping Address
                 </label>
                 <textarea
+                  value={formState.shippingAddress}
+                  onChange={handleChange("shippingAddress")}
                   placeholder="Please enter your full shipping address..."
                   className="w-full bg-gray-50 border border-gray-200 p-3 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#F424B2] focus:border-transparent transition-all h-24 resize-none"
                 />
+                {formErrors.shippingAddress && (
+                  <p className="text-sm text-red-500 ml-1">
+                    {formErrors.shippingAddress}
+                  </p>
+                )}
+              </div>
+
+              <div className="md:col-span-2 flex justify-center mt-10">
+                <button
+                  type="submit"
+                  disabled={loading}
+                  className="flex items-center gap-2 bg-[#F424B2] hover:bg-[#d91a9b] shadow-[0_6px_0_#9e1773] hover:shadow-[0_4px_0_#9e1773] hover:translate-y-1 active:shadow-none active:translate-y-2 transition-all text-white font-bold text-lg px-12 py-3 rounded-full disabled:cursor-not-allowed disabled:opacity-70"
+                >
+                  <PawPrint className="w-5 h-5 fill-current" />
+                  {loading ? "Submitting..." : "Place Order"}
+                </button>
               </div>
             </form>
-
-            {/* Submit Button */}
-            <div className="flex justify-center mt-10">
-              <button className="flex items-center gap-2 bg-[#F424B2] hover:bg-[#d91a9b] shadow-[0_6px_0_#9e1773] hover:shadow-[0_4px_0_#9e1773] hover:translate-y-1 active:shadow-none active:translate-y-2 transition-all text-white font-bold text-lg px-12 py-3 rounded-full">
-                <PawPrint className="w-5 h-5 fill-current" />
-                Place Order
-              </button>
-            </div>
           </div>
         </div>
       )}

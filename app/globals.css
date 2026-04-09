@@ -37,3 +37,7 @@ h5,
 h6 {
   font-family: var(--font-georgia);
 }
+
+.swal2-container {
+  z-index: 11000 !important;
+}
