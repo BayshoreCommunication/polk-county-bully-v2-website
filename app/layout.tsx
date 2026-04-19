@@ -37,7 +37,7 @@ const georgia = localFont({
 });
 
 export const metadata = {
-  metadataBase: new URL("https://polk-county-bully-v2-website.vercel.app"),
+  metadataBase: new URL("https://www.bully-project.org"),
 };
 
 export default function RootLayout({
