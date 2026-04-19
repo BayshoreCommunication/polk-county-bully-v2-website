@@ -60,7 +60,7 @@ const Footer: React.FC = () => {
                 />
               </Link>
             </div>
-            <p className="text-gray-200 text-sm leading-relaxed max-w-[320px]">
+            <p className="text-gray-200 text-base leading-relaxed max-w-[320px]">
               Helping bully breed dogs find loving homes. Adopt, foster, or
               donate to save a life today. Helping bully breed dogs find loving
               homes.
@@ -80,7 +80,7 @@ const Footer: React.FC = () => {
                 <li key={link.label}>
                   <Link
                     href={link.href}
-                    className="group flex items-center text-sm text-gray-200 hover:text-white transition-colors duration-200"
+                    className="group flex items-center text-base text-gray-200 hover:text-white transition-colors duration-200"
                   >
                     <ChevronRight className="w-4 h-4 mr-2 text-white/70 group-hover:text-white" />
                     {link.label}
@@ -98,7 +98,7 @@ const Footer: React.FC = () => {
                 <li key={link.label}>
                   <Link
                     href={link.href}
-                    className="group flex items-center text-sm text-gray-200 hover:text-white transition-colors duration-200"
+                    className="group flex items-center text-base text-gray-200 hover:text-white transition-colors duration-200"
                   >
                     <ChevronRight className="w-4 h-4 mr-2 text-white/70 group-hover:text-white" />
                     {link.label}
@@ -149,7 +149,7 @@ const Footer: React.FC = () => {
         </div>
 
         {/* Bottom Bar: Copyright & Credits */}
-        <div className="border-t border-indigo-700/50 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-gray-300 gap-4">
+        <div className="border-t border-indigo-700/50 pt-8 flex flex-col md:flex-row justify-between items-center text-base text-gray-300 gap-4">
           <p>
             &copy; Copyrights{" "}
             <span className="text-yellow-400 font-medium">

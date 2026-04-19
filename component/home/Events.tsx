@@ -1,4 +1,4 @@
-import { CalendarDays, MapPin, PawPrint } from "lucide-react";
+import { CalendarDays, MapPin } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import ScrollMotion from "../motion/ScrollMotion";
@@ -24,7 +24,7 @@ const events: EventCard[] = [
       "Spend the afternoon meeting rescue dogs, hearing their stories, and finding the right match for your family.",
     date: "Saturday, 11 AM",
     location: "Lakeland Adoption Pop-Up",
-    image: "/assets/home/volunteer-left-image.svg",
+    image: "/assets/dog/WhatsApp Image 2026-04-19 at 4.35.22 PM.jpeg",
     cardClassName:
       "bg-[#EEE8FF] border-[#DCCEFF] shadow-[0_18px_50px_rgba(119,91,200,0.16)]",
     buttonClassName:
@@ -52,7 +52,7 @@ const events: EventCard[] = [
       "Join an open discussion on adoption, bully-breed advocacy, and how the community can help more dogs leave shelter life.",
     date: "Thursday, 7 PM",
     location: "Downtown Partner Cafe",
-    image: "/assets/home/foster-right-image.svg",
+    image: "/assets/dog/dog7.jpg",
     cardClassName:
       "bg-[#F6EBD8] border-[#EACD9E] shadow-[0_18px_50px_rgba(127,86,32,0.14)]",
     buttonClassName:
@@ -66,7 +66,7 @@ const events: EventCard[] = [
       "A relaxed volunteer hangout with dog walks, photo moments, and easy ways to help even if you are new to the rescue.",
     date: "Sunday, 10 AM",
     location: "Polk County Trail Meetup",
-    image: "/assets/home/volunteer-right-image.svg",
+    image: "/assets/dog/dog13.jpg",
     cardClassName:
       "bg-[#DDF3E7] border-[#BEE3CE] shadow-[0_18px_50px_rgba(48,117,78,0.14)]",
     buttonClassName:
@@ -84,16 +84,16 @@ const Events = () => {
           src="/assets/home/adoption-bg.svg"
           alt="Textured event background"
           fill
-          className="object-cover object-center blur-[1px] brightness-[0.5]"
+          className="object-cover object-center blur-[1px] brightness-[0.65]"
           quality={90}
         />
-        <div className="absolute inset-0 bg-linear-to-bl from-cyan-950/70 via-teal-900/75 to-amber-950/60" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(255,215,0,0.16),transparent_32%)]" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_right,rgba(244,36,178,0.16),transparent_28%)]" />
+        <div className="absolute inset-0 bg-linear-to-bl from-cyan-950/50 via-teal-900/55 to-amber-950/40" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(255,215,0,0.12),transparent_32%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_right,rgba(244,36,178,0.10),transparent_28%)]" />
       </div>
 
-      <div className="absolute top-0 left-0 right-0 h-40 bg-linear-to-b from-black/60 via-black/25 to-transparent z-0" />
-      <div className="absolute bottom-0 left-0 right-0 h-40 bg-linear-to-t from-black/60 via-black/25 to-transparent z-0" />
+      <div className="absolute top-0 left-0 right-0 h-32 bg-linear-to-b from-[#031b24]/60 via-[#031b24]/20 to-transparent z-0" />
+      <div className="absolute bottom-0 left-0 right-0 h-32 bg-linear-to-t from-[#031b24]/55 via-[#031b24]/15 to-transparent z-0" />
       <div className="flex items-center mb-8 text-center mx-auto w-full max-w-7xl justify-center">
         <h1 className="text-4xl lg:text-6xl font-bold text-[#FFD700]">
           See Our Events

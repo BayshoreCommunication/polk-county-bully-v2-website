@@ -10,8 +10,7 @@ import {
 } from "framer-motion"; // Animation library
 import { PawPrint } from "lucide-react";
 import Image from "next/image";
-import { useEffect, useState } from "react";
-import HeroTicketPopup from "./HeroTicketPopup";
+import { useEffect } from "react";
 import Button from "../shared/Button";
 
 // Animation Variants for the Typing Effect
@@ -42,7 +41,6 @@ const letterVariants: Variants = {
 
 const HeroSection = () => {
   const titleText = "Every Dog Deserves To Be In A Loving Home";
-  const [isHeroAnimationComplete, setIsHeroAnimationComplete] = useState(false);
 
   // Counter Animation Component
   const Counter = ({
@@ -80,8 +78,7 @@ const HeroSection = () => {
   };
 
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden bg-gray-900 pt-20 lg:pt-28">
-      <HeroTicketPopup startTimer={isHeroAnimationComplete} />
+    <section className="relative min-h-screen flex items-center overflow-hidden bg-gray-900 pt-[120px] lg:pt-[152px]">
 
       {/* --- Background Image --- */}
       <div className="absolute inset-0 z-0 top-0">
@@ -219,9 +216,7 @@ const HeroSection = () => {
         <motion.div
           // Start 50px to the left (x: -50) and invisible
           initial={{ opacity: 0, x: -50 }}
-          // Animate to original position (x: 0) and visible
           animate={{ opacity: 1, x: 0 }}
-          onAnimationComplete={() => setIsHeroAnimationComplete(true)}
           transition={{
             delay: 1.8,
             duration: 0.8,

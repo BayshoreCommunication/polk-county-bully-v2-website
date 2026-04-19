@@ -9,7 +9,7 @@ const SearchAvailableDogsEmbedded = () => {
   return (
     <section className="relative py-20 lg:py-28 overflow-hidden min-h-screen ">
       {/* Top gradient blur transition */}
-      <div className="absolute top-0 left-0 right-0 h-40 md:h-48 bg-linear-to-b from-[#003C5F]/80 via-[#003C5F]/40 to-transparent backdrop-blur-5xl z-5" />
+      <div className="absolute top-0 left-0 right-0 h-32 bg-linear-to-b from-[#003C5F]/50 via-[#003C5F]/15 to-transparent z-5" />
 
       {/* --- 1. Background Image Implementation --- */}
       <div className="absolute inset-0 -z-20">
@@ -17,7 +17,7 @@ const SearchAvailableDogsEmbedded = () => {
           src="/assets/home/search-available-dogs.svg"
           alt="Background Texture"
           fill
-          className="object-cover object-center blur-[1px] brightness-[0.6]"
+          className="object-cover object-center blur-[1px] brightness-[0.72]"
           quality={90}
         />
         {/* Multi-colored gradient blur overlay - teal to warm amber transition */}
@@ -61,7 +61,7 @@ const SearchAvailableDogsEmbedded = () => {
       </div>
 
       {/* Bottom gradient blur transition */}
-      <div className="absolute bottom-0 left-0 right-0 h-40 md:h-48 bg-linear-to-b from-transparent via-[#009AD9]/30 to-[#009AD9]/80 backdrop-blur-md z-5" />
+      <div className="absolute bottom-0 left-0 right-0 h-32 bg-linear-to-b from-transparent via-[#009AD9]/20 to-[#009AD9]/55 z-5" />
     </section>
   );
 };

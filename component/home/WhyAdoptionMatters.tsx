@@ -31,7 +31,7 @@ const WhyAdoptionMatters = () => {
     <div className="">
       <section className="relative py-20 lg:py-28 overflow-hidden">
         {/* Top gradient blur */}
-        <div className="absolute top-0 left-0 right-0 h-40 md:h-48 bg-gradient-to-b from-black/70 via-black/40 to-transparent backdrop-blur-md z-5" />
+        <div className="absolute top-0 left-0 right-0 h-32 bg-linear-to-b from-[#031b24]/50 via-[#031b24]/15 to-transparent z-5" />
 
         {/* --- Background Image --- */}
         <div className="absolute inset-0 -z-20">
@@ -39,10 +39,10 @@ const WhyAdoptionMatters = () => {
             src="/assets/home/adoption-bg.svg"
             alt="Background Texture"
             fill
-            className="object-cover object-center blur-[1px] brightness-[0.6]"
+            className="object-cover object-center blur-[1px] brightness-[0.72]"
             quality={90}
           />
-          <div className="absolute inset-0 bg-gradient-to-bl from-cyan-900/50 via-teal-800/50 to-amber-800/50 backdrop-blur-md opacity-60" />
+          <div className="absolute inset-0 bg-linear-to-bl from-cyan-900/40 via-teal-800/40 to-amber-800/35 opacity-70" />
         </div>
 
         <div className="container mx-auto px-6 md:px-12 relative z-10">
@@ -120,7 +120,7 @@ const WhyAdoptionMatters = () => {
         </div>
 
         {/* Bottom gradient blur */}
-        <div className="absolute bottom-0 left-0 right-0 h-40 md:h-48 bg-gradient-to-b from-transparent via-[#003C5F]/30 to-[#003C5F]/80 backdrop-blur-md z-5" />
+        <div className="absolute bottom-0 left-0 right-0 h-32 bg-linear-to-b from-transparent via-[#003C5F]/20 to-[#003C5F]/55 z-5" />
       </section>
     </div>
   );

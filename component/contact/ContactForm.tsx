@@ -147,7 +147,7 @@ export default function ContactForm() {
                   Email Address
                 </h3>
                 <p className="text-gray-100/90 text-base break-all">
-                  support@bullyprojectrescue.com
+                  PolkCountyBullyProject@gmail.com
                 </p>
               </div>
             </div>

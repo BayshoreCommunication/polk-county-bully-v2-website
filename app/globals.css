@@ -41,3 +41,24 @@ h6 {
 .swal2-container {
   z-index: 11000 !important;
 }
+
+@keyframes events-ticker {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.events-ticker {
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+  flex-wrap: nowrap;
+  animation: events-ticker 60s linear infinite;
+}
+
+.events-ticker:hover {
+  animation-play-state: paused;
+}

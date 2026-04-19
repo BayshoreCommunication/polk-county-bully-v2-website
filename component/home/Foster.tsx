@@ -11,7 +11,7 @@ const Foster = () => {
   return (
     <section className="relative py-24 overflow-hidden">
       {/* Top gradient blur transition */}
-      <div className="absolute top-0 left-0 right-0 h-40 md:h-48 bg-linear-to-b from-black/50 via-transparent to-transparent z-5" />
+      <div className="absolute top-0 left-0 right-0 h-32 bg-linear-to-b from-[#031b24]/60 via-[#031b24]/15 to-transparent z-5" />
 
       {/* --- Background Image --- */}
       <div className="absolute inset-0 -z-20">
@@ -19,7 +19,7 @@ const Foster = () => {
           src="/assets/home/foster-bg.svg" // Replace with your graffiti background
           alt="Colorful graffiti art background"
           fill
-          className="object-cover object-center blur-[1px] brightness-[0.6]"
+          className="object-cover object-center blur-[1px] brightness-[0.68]"
           quality={90}
         />
         {/* Multi-colored gradient blur overlay */}
@@ -36,7 +36,7 @@ const Foster = () => {
             {/* 1. Main Vertical Image (Left) */}
             <div className="absolute left-0 top-12 w-[60%] h-[85%] border-[4px] border-white shadow-2xl z-10">
               <Image
-                src="/assets/home/foster-right-image.svg" // Replace with large dog image
+                src="/assets/dog/dog10.jpg" // Replace with large dog image
                 alt="Foster dog"
                 fill
                 className="object-cover"
@@ -102,7 +102,7 @@ const Foster = () => {
       </div>
 
       {/* Bottom gradient blur transition */}
-      <div className="absolute bottom-0 left-0 right-0 h-40 md:h-48 bg-linear-to-b from-transparent via-black/60 to-black backdrop-blur-md z-5" />
+      <div className="absolute bottom-0 left-0 right-0 h-32 bg-linear-to-b from-transparent via-[#031b24]/40 to-[#031b24]/70 z-5" />
     </section>
   );
 };

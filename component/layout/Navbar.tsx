@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
+import EventsBanner from "./EventsBanner";
 
 const navItems = [
   { name: "Home", href: "/" },
@@ -24,7 +25,9 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 w-full border-b border-white/10 bg-black/20 backdrop-blur-xl shadow-lg">
+    <nav className="fixed top-0 left-0 right-0 z-50 w-full bg-black/20 backdrop-blur-xl shadow-lg">
+      <EventsBanner />
+      <div className="border-b border-white/10">
       <div className="container mx-auto px-4 sm:px-6 md:px-8 lg:px-12">
         <div className="relative flex h-16 lg:h-20 items-center justify-between">
           {/* Logo */}
@@ -133,6 +136,7 @@ const Navbar = () => {
             </button>
           </div>
         </div>
+      </div>
       </div>
 
       {/* Mobile Menu */}

@@ -10,7 +10,7 @@ const Volunteer = () => {
   return (
     <section className="relative py-24 overflow-hidden">
       {/* Top gradient blur transition */}
-      <div className="absolute top-0 left-0 right-0 h-40 md:h-48 bg-linear-to-b from-black via-black/60 to-transparent backdrop-blur-md z-5" />
+      <div className="absolute top-0 left-0 right-0 h-32 bg-linear-to-b from-[#031b24]/65 via-[#031b24]/20 to-transparent z-5" />
 
       {/* --- Background Image --- */}
       <div className="absolute inset-0 -z-20">
@@ -18,7 +18,7 @@ const Volunteer = () => {
           src="/assets/home/volunteer-bg.svg" // Replace with your graffiti background
           alt="Colorful graffiti art background"
           fill
-          className="object-cover object-center blur-[1px] brightness-[0.6]"
+          className="object-cover object-center blur-[1px] brightness-[0.68]"
           quality={90}
         />
         {/* Multi-colored gradient blur overlay */}
@@ -97,13 +97,13 @@ const Volunteer = () => {
                 </>
               }
               // Pink background with 3D shadow style
-              className="!bg-[#F424B2] hover:!bg-[#d91a9b] shadow-[0_6px_0_#9e1773] hover:shadow-[0_4px_0_#9e1773] hover:translate-y-1 text-xl px-12 py-4 rounded-full min-w-[300px]"
+              className="bg-[#F424B2]! hover:bg-[#d91a9b]! shadow-[0_6px_0_#9e1773] hover:shadow-[0_4px_0_#9e1773] hover:translate-y-1 text-xl px-12 py-4 rounded-full min-w-[300px]"
             />
           </div>
         </ScrollMotion>
       </div>
       {/* Bottom gradient blur transition */}
-      <div className="absolute bottom-0 left-0 right-0 h-40 md:h-48 bg-linear-to-b from-transparent via-black/60 to-black backdrop-blur-md z-5" />
+      <div className="absolute bottom-0 left-0 right-0 h-32 bg-linear-to-b from-transparent via-[#031b24]/40 to-[#031b24]/70 z-5" />
     </section>
   );
 };

@@ -67,7 +67,9 @@ const SponsorADog = () => {
       style={{ backgroundColor: sectionBgColor }}
     >
       {/* Top gradient blur transition */}
-      <div className="absolute top-0 left-0 right-0 h-40 md:h-48 bg-gradient-to-b from-[#003C5F]/70 via-[#003C5F]/35 to-transparent backdrop-blur-md z-5" />
+      <div className="absolute top-0 left-0 right-0 h-32 bg-linear-to-b from-[#003C5F]/45 via-[#003C5F]/15 to-transparent z-5" />
+      {/* Bottom gradient — eases into Merchandise teal */}
+      <div className="absolute bottom-0 left-0 right-0 h-32 bg-linear-to-b from-transparent via-[#006a7a]/25 to-[#005B70]/60 z-5" />
 
       <div className="container mx-auto px-4 md:px-8 relative z-20">
         {/* Wrapper to control max-width */}
