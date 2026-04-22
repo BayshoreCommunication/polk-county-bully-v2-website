@@ -13,11 +13,27 @@ type EventCard = {
   image: string;
   cardClassName: string;
   buttonClassName: string;
+  url: string;
 };
 
 const events: EventCard[] = [
   {
     id: 1,
+    eyebrow: "Golf Tournament",
+    title: "3rd Annual Putts Fore Mutts Online Auction",
+    description:
+      "Bid in our 3rd Annual Putts Fore Mutts Online Auction and help rescue dogs find a second chance.",
+    date: "Apr 24, 2026",
+    location: "Virtual Meetup",
+    image: "/assets/dog/Screenshot_2026-04-22_171940.webp",
+    cardClassName:
+      "bg-[#DDF3E7] border-[#BEE3CE] shadow-[0_18px_50px_rgba(48,117,78,0.14)]",
+    buttonClassName:
+      "bg-[#17674D] hover:bg-[#12533D] text-white shadow-[0_8px_18px_rgba(23,103,77,0.22)]",
+    url: "https://givebutter.com/c/2nd-annual-putts-fore-mutts-online-auction-copy-rtarb6/auction",
+  },
+  {
+    id: 2,
     eyebrow: "Adoption Day",
     title: "Meet Our Bullies",
     description:
@@ -29,9 +45,10 @@ const events: EventCard[] = [
       "bg-[#EEE8FF] border-[#DCCEFF] shadow-[0_18px_50px_rgba(119,91,200,0.16)]",
     buttonClassName:
       "bg-[#3A2E8A] hover:bg-[#2E246E] text-white shadow-[0_8px_18px_rgba(58,46,138,0.28)]",
+    url: "/contact",
   },
   {
-    id: 2,
+    id: 3,
     eyebrow: "Foster Meet-Up",
     title: "Caregiver Coffee Chat",
     description:
@@ -43,9 +60,10 @@ const events: EventCard[] = [
       "bg-[#F5F7FB] border-[#E2E8F3] shadow-[0_18px_50px_rgba(94,112,143,0.12)]",
     buttonClassName:
       "bg-[#111111] hover:bg-[#000000] text-white shadow-[0_8px_18px_rgba(17,17,17,0.2)]",
+    url: "/contact",
   },
   {
-    id: 3,
+    id: 4,
     eyebrow: "Community Night",
     title: "Rescue Roundtable",
     description:
@@ -57,21 +75,23 @@ const events: EventCard[] = [
       "bg-[#F6EBD8] border-[#EACD9E] shadow-[0_18px_50px_rgba(127,86,32,0.14)]",
     buttonClassName:
       "bg-[#7A4A16] hover:bg-[#603910] text-white shadow-[0_8px_18px_rgba(122,74,22,0.22)]",
+    url: "/contact",
   },
-  {
-    id: 4,
-    eyebrow: "Volunteer Social",
-    title: "Walk, Wag & Hang",
-    description:
-      "A relaxed volunteer hangout with dog walks, photo moments, and easy ways to help even if you are new to the rescue.",
-    date: "Sunday, 10 AM",
-    location: "Polk County Trail Meetup",
-    image: "/assets/dog/dog13.jpg",
-    cardClassName:
-      "bg-[#DDF3E7] border-[#BEE3CE] shadow-[0_18px_50px_rgba(48,117,78,0.14)]",
-    buttonClassName:
-      "bg-[#17674D] hover:bg-[#12533D] text-white shadow-[0_8px_18px_rgba(23,103,77,0.22)]",
-  },
+  // {
+  //   id: 4,
+  //   eyebrow: "Volunteer Social",
+  //   title: "Walk, Wag & Hang",
+  //   description:
+  //     "A relaxed volunteer hangout with dog walks, photo moments, and easy ways to help even if you are new to the rescue.",
+  //   date: "Sunday, 10 AM",
+  //   location: "Polk County Trail Meetup",
+  //   image: "/assets/dog/dog6.jpg",
+  //   cardClassName:
+  //     "bg-[#DDF3E7] border-[#BEE3CE] shadow-[0_18px_50px_rgba(48,117,78,0.14)]",
+  //   buttonClassName:
+  //     "bg-[#17674D] hover:bg-[#12533D] text-white shadow-[0_8px_18px_rgba(23,103,77,0.22)]",
+  //   url: "/contact",
+  // },
 ];
 
 const Events = () => {
@@ -140,7 +160,7 @@ const Events = () => {
                 </div>
 
                 <Link
-                  href="/contact"
+                  href={event.url}
                   className={`inline-flex w-fit items-center justify-center rounded-full px-5 py-3 text-sm font-bold transition-colors duration-300 ${event.buttonClassName}`}
                 >
                   View details
