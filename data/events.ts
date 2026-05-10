@@ -17,8 +17,16 @@ export type BannerEvent = {
 };
 
 export const bannerEvents: BannerEvent[] = [
-  {
+   {
     id: 1,
+    title: "Pitties & Pearls - The Masquerade Edition",
+    date: "Jun 13, 2026",
+    ticketUrl:
+      "https://app.giveffect.com/campaigns/45166-pitties-pearls-the-masquerade-edition",
+    isActive: true,
+  },
+  {
+    id: 2,
     title: "3rd Annual Putts Fore Mutts Online Auction",
     date: "Apr 24, 2026",
     ticketUrl:
@@ -26,19 +34,19 @@ export const bannerEvents: BannerEvent[] = [
     isActive: true,
   },
   {
-    id: 2,
+    id: 3,
     title: "Meet Our Bullies",
     date: "Saturdays, 11 AM",
     ticketUrl: "https://givebutter.com/polk-county-bully",
     isActive: true,
   },
-  {
-    id: 3,
-    title: "Caregiver Coffee Chat",
-    date: "Wednesdays, 6 PM",
-    ticketUrl: "https://givebutter.com/polk-county-bully",
-    isActive: true,
-  },
+  // {
+  //   id: 3,
+  //   title: "Caregiver Coffee Chat",
+  //   date: "Wednesdays, 6 PM",
+  //   ticketUrl: "https://givebutter.com/polk-county-bully",
+  //   isActive: true,
+  // },
   {
     id: 4,
     title: "Rescue Roundtable",

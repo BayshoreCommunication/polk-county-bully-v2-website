@@ -19,6 +19,21 @@ type EventCard = {
 const events: EventCard[] = [
   {
     id: 1,
+    eyebrow: "The Masquerade Edition",
+    title: "Pitties & Pearls - The Masquerade Edition",
+    description:
+      "A fundraiser for plok country bully project with a night of fun, food, and philanthropy to support our rescue efforts.",
+    date: "Jun 13, 2026 6:00pm - 10:00pm ET",
+    location: "Lake Alfred, FL 33850 USA",
+    image: "/assets/home/eivent1.png",
+    cardClassName:
+      "bg-[#DDF3E7] border-[#BEE3CE] shadow-[0_18px_50px_rgba(48,117,78,0.14)]",
+    buttonClassName:
+      "bg-[#17674D] hover:bg-[#12533D] text-white shadow-[0_8px_18px_rgba(23,103,77,0.22)]",
+    url: "https://app.giveffect.com/campaigns/45166-pitties-pearls-the-masquerade-edition",
+  },
+  {
+    id: 2,
     eyebrow: "Golf Tournament",
     title: "3rd Annual Putts Fore Mutts Online Auction",
     description:
@@ -33,7 +48,7 @@ const events: EventCard[] = [
     url: "https://givebutter.com/c/2nd-annual-putts-fore-mutts-online-auction-copy-rtarb6/auction",
   },
   {
-    id: 2,
+    id: 3,
     eyebrow: "Adoption Day",
     title: "Meet Our Bullies",
     description:
@@ -47,21 +62,21 @@ const events: EventCard[] = [
       "bg-[#3A2E8A] hover:bg-[#2E246E] text-white shadow-[0_8px_18px_rgba(58,46,138,0.28)]",
     url: "/contact",
   },
-  {
-    id: 3,
-    eyebrow: "Foster Meet-Up",
-    title: "Caregiver Coffee Chat",
-    description:
-      "A casual orientation for future fosters to ask questions, meet the team, and learn what support we provide.",
-    date: "Wednesday, 6 PM",
-    location: "Rescue Office Lounge",
-    image: "/assets/home/foster-left-image.svg",
-    cardClassName:
-      "bg-[#F5F7FB] border-[#E2E8F3] shadow-[0_18px_50px_rgba(94,112,143,0.12)]",
-    buttonClassName:
-      "bg-[#111111] hover:bg-[#000000] text-white shadow-[0_8px_18px_rgba(17,17,17,0.2)]",
-    url: "/contact",
-  },
+  // {
+  //   id: 3,
+  //   eyebrow: "Foster Meet-Up",
+  //   title: "Caregiver Coffee Chat",
+  //   description:
+  //     "A casual orientation for future fosters to ask questions, meet the team, and learn what support we provide.",
+  //   date: "Wednesday, 6 PM",
+  //   location: "Rescue Office Lounge",
+  //   image: "/assets/home/foster-left-image.svg",
+  //   cardClassName:
+  //     "bg-[#F5F7FB] border-[#E2E8F3] shadow-[0_18px_50px_rgba(94,112,143,0.12)]",
+  //   buttonClassName:
+  //     "bg-[#111111] hover:bg-[#000000] text-white shadow-[0_8px_18px_rgba(17,17,17,0.2)]",
+  //   url: "/contact",
+  // },
   {
     id: 4,
     eyebrow: "Community Night",
