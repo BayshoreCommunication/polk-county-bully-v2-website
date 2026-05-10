@@ -25,7 +25,7 @@ const events: EventCard[] = [
       "A fundraiser for plok country bully project with a night of fun, food, and philanthropy to support our rescue efforts.",
     date: "Jun 13, 2026 6:00pm - 10:00pm ET",
     location: "Lake Alfred, FL 33850 USA",
-    image: "/assets/home/eivent1.png",
+    image: "/assets/dog/evnt.webp",
     cardClassName:
       "bg-[#DDF3E7] border-[#BEE3CE] shadow-[0_18px_50px_rgba(48,117,78,0.14)]",
     buttonClassName:
