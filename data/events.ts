@@ -17,7 +17,7 @@ export type BannerEvent = {
 };
 
 export const bannerEvents: BannerEvent[] = [
-   {
+  {
     id: 1,
     title: "Pitties & Pearls - The Masquerade Edition",
     date: "Jun 13, 2026",
@@ -35,9 +35,10 @@ export const bannerEvents: BannerEvent[] = [
   },
   {
     id: 3,
-    title: "Meet Our Bullies",
-    date: "Saturdays, 11 AM",
-    ticketUrl: "https://givebutter.com/polk-county-bully",
+    title: "Bowling for Bullies",
+    date: "May 17, 2026",
+    ticketUrl:
+      "https://app.giveffect.com/campaigns/45003-bowling-for-bullies-may-2026",
     isActive: true,
   },
   // {

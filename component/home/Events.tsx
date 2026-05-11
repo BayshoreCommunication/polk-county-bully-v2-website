@@ -49,18 +49,18 @@ const events: EventCard[] = [
   },
   {
     id: 3,
-    eyebrow: "Adoption Day",
-    title: "Meet Our Bullies",
+    eyebrow: "Bowling Fundraiser",
+    title: "Bowling for Bullies",
     description:
-      "Spend the afternoon meeting rescue dogs, hearing their stories, and finding the right match for your family.",
-    date: "Saturday, 11 AM",
-    location: "Lakeland Adoption Pop-Up",
-    image: "/assets/dog/WhatsApp Image 2026-04-19 at 4.35.22 PM.jpeg",
+      "An event in support of Polk County Bully Project. Join us for a day of fun, food, and fundraising to help our rescue efforts.",
+    date: "May 17, 2026 12:30pm - 4:00pm ET",
+    location: "4111 Florida Avenue South Lakeland, FL 33813 USA",
+    image: "/assets/dog/event3.jpg",
     cardClassName:
-      "bg-[#EEE8FF] border-[#DCCEFF] shadow-[0_18px_50px_rgba(119,91,200,0.16)]",
+      "bg-[#DDF3E7] border-[#BEE3CE] shadow-[0_18px_50px_rgba(48,117,78,0.14)]",
     buttonClassName:
-      "bg-[#3A2E8A] hover:bg-[#2E246E] text-white shadow-[0_8px_18px_rgba(58,46,138,0.28)]",
-    url: "/contact",
+      "bg-[#17674D] hover:bg-[#12533D] text-white shadow-[0_8px_18px_rgba(23,103,77,0.22)]",
+    url: "https://app.giveffect.com/campaigns/45003-bowling-for-bullies-may-2026",
   },
   // {
   //   id: 3,
@@ -87,9 +87,9 @@ const events: EventCard[] = [
     location: "Downtown Partner Cafe",
     image: "/assets/dog/dog7.jpg",
     cardClassName:
-      "bg-[#F6EBD8] border-[#EACD9E] shadow-[0_18px_50px_rgba(127,86,32,0.14)]",
+      "bg-[#DDF3E7] border-[#BEE3CE] shadow-[0_18px_50px_rgba(48,117,78,0.14)]",
     buttonClassName:
-      "bg-[#7A4A16] hover:bg-[#603910] text-white shadow-[0_8px_18px_rgba(122,74,22,0.22)]",
+      "bg-[#17674D] hover:bg-[#12533D] text-white shadow-[0_8px_18px_rgba(23,103,77,0.22)]",
     url: "/contact",
   },
   // {
