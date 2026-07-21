@@ -17,14 +17,14 @@ export type BannerEvent = {
 };
 
 export const bannerEvents: BannerEvent[] = [
-  {
-    id: 1,
-    title: "Pitties & Pearls - The Masquerade Edition",
-    date: "Jun 13, 2026",
-    ticketUrl:
-      "https://app.giveffect.com/campaigns/45166-pitties-pearls-the-masquerade-edition",
-    isActive: true,
-  },
+  // {
+  //   id: 1,
+  //   title: "Pitties & Pearls - The Masquerade Edition",
+  //   date: "Jun 13, 2026",
+  //   ticketUrl:
+  //     "https://app.giveffect.com/campaigns/45166-pitties-pearls-the-masquerade-edition",
+  //   isActive: true,
+  // },
   {
     id: 2,
     title: "3rd Annual Putts Fore Mutts Online Auction",
@@ -53,6 +53,22 @@ export const bannerEvents: BannerEvent[] = [
     title: "Rescue Roundtable",
     date: "Thursdays, 7 PM",
     ticketUrl: "https://givebutter.com/polk-county-bully",
+    isActive: true,
+  },
+  {
+    id: 5,
+    title: "Bingo For The Bullies",
+    date: "Jul 8, 2023",
+    ticketUrl:
+      "https://www.facebook.com/events/824219379270193/",
+    isActive: true,
+  },
+  {
+    id: 6,
+    title: "Rock for Paws 2026 Benefiting the Polk County Bully Project",
+    date: "Sep 26, 2026",
+    ticketUrl:
+      "https://www.facebook.com/events/1278974630796407/",
     isActive: true,
   },
   // {

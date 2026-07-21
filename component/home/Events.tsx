@@ -17,20 +17,50 @@ type EventCard = {
 };
 
 const events: EventCard[] = [
+  // {
+  //   id: 1,
+  //   eyebrow: "The Masquerade Edition",
+  //   title: "Pitties & Pearls - The Masquerade Edition",
+  //   description:
+  //     "A fundraiser for plok country bully project with a night of fun, food, and philanthropy to support our rescue efforts.",
+  //   date: "Jun 13, 2026 6:00pm - 10:00pm ET",
+  //   location: "Lake Alfred, FL 33850 USA",
+  //   image: "/assets/dog/evnt.webp",
+  //   cardClassName:
+  //     "bg-[#DDF3E7] border-[#BEE3CE] shadow-[0_18px_50px_rgba(48,117,78,0.14)]",
+  //   buttonClassName:
+  //     "bg-[#17674D] hover:bg-[#12533D] text-white shadow-[0_8px_18px_rgba(23,103,77,0.22)]",
+  //   url: "https://app.giveffect.com/campaigns/45166-pitties-pearls-the-masquerade-edition",
+  // },
   {
-    id: 1,
-    eyebrow: "The Masquerade Edition",
-    title: "Pitties & Pearls - The Masquerade Edition",
+    id: 5,
+    eyebrow: "Games Event",
+    title: "Bingo For The Bullies",
     description:
-      "A fundraiser for plok country bully project with a night of fun, food, and philanthropy to support our rescue efforts.",
-    date: "Jun 13, 2026 6:00pm - 10:00pm ET",
-    location: "Lake Alfred, FL 33850 USA",
-    image: "/assets/dog/evnt.webp",
+      "Join us for a fun-filled bingo night benefiting Polk County Bully Project. Help rescue dogs find their forever homes!",
+    date: "Jul 8, 2023",
+    location: "Winners Circle Sports Bar and Grill, Lakeland, FL",
+    image: "/assets/dog/bingo-for-the-bullies.jpg",
     cardClassName:
       "bg-[#DDF3E7] border-[#BEE3CE] shadow-[0_18px_50px_rgba(48,117,78,0.14)]",
     buttonClassName:
       "bg-[#17674D] hover:bg-[#12533D] text-white shadow-[0_8px_18px_rgba(23,103,77,0.22)]",
-    url: "https://app.giveffect.com/campaigns/45166-pitties-pearls-the-masquerade-edition",
+    url: "https://www.facebook.com/events/824219379270193/",
+  },
+  {
+    id: 6,
+    eyebrow: "Fundraiser Concert",
+    title: "Rock for Paws 2026",
+    description:
+      "A rock concert benefiting the Polk County Bully Project (PCBP). Join Smokepoint and friends for a night of live music and rescue advocacy.",
+    date: "Sep 26, 2026",
+    location: "Idlewood Venue, Bartow, FL",
+    image: "/assets/dog/rock-for-paws-2026.jpg",
+    cardClassName:
+      "bg-[#DDF3E7] border-[#BEE3CE] shadow-[0_18px_50px_rgba(48,117,78,0.14)]",
+    buttonClassName:
+      "bg-[#17674D] hover:bg-[#12533D] text-white shadow-[0_8px_18px_rgba(23,103,77,0.22)]",
+    url: "https://www.facebook.com/events/1278974630796407/",
   },
   {
     id: 2,
